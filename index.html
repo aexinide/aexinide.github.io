@@ -385,7 +385,7 @@ function blogList(){
   if(!POSTS.length)h+='<p>No posts yet.</p>';
   POSTS.forEach(function(p){
    var ex=p.body.replace(/!\[[^\]]*\]\([^)]*\)/g,'').replace(/[#>*`\[\]]|^-\s/gm,'').replace(/\s+/g,' ').trim().slice(0,150);
-   h+='<a class="post" href="blog/'+encodeURIComponent(p.slug)+'/" data-post="'+esc(p.slug)+'"><div class="meta">'+esc(p.date)+' · '+mins(p)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(ex)+'…</p></a>';
+   h+='<a class="post" href="blog/'+encodeURIComponent(p.slug)+'/"><div class="meta">'+esc(p.date)+' · '+mins(p)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(ex)+'…</p></a>';
   });
  }
  bi.innerHTML=h;document.getElementById('v-blog').scrollTop=0;
