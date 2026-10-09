@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AEXINIDE (@aexinide) — AI, Robotics, Linux Kernels & Quantum Systems</title>
+<meta name="description" content="AEXINIDE (@aexinide): building at the edge of AI, robotics, Linux kernels and quantum systems. Open-source projects, blog and contact.">
+<meta name="author" content="aexinide">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://aexinide.github.io/">
+<link rel="alternate" type="application/rss+xml" title="AEXINIDE blog" href="/feed.xml">
+<meta name="theme-color" content="#0a1018">
+<meta name="color-scheme" content="dark">
+<!-- Search engine verification: uncomment and paste your codes after adding the site in each console -->
+<!-- <meta name="google-site-verification" content="PASTE_CODE_HERE"> -->
+<!-- <meta name="msvalidate.01" content="PASTE_CODE_HERE"> -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AEXINIDE">
+<meta property="og:title" content="AEXINIDE (@aexinide) — AI, Robotics, Linux Kernels & Quantum Systems">
+<meta property="og:description" content="AEXINIDE (@aexinide): building at the edge of AI, robotics, Linux kernels and quantum systems. Open-source projects, blog and contact.">
+<meta property="og:url" content="https://aexinide.github.io/">
+<meta property="og:image" content="https://aexinide.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AEXINIDE block-letter banner with @aexinide">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@aexinide">
+<meta name="twitter:creator" content="@aexinide">
+<meta name="twitter:title" content="AEXINIDE (@aexinide) — AI, Robotics, Linux Kernels & Quantum Systems">
+<meta name="twitter:description" content="AEXINIDE (@aexinide): building at the edge of AI, robotics, Linux kernels and quantum systems. Open-source projects, blog and contact.">
+<meta name="twitter:image" content="https://aexinide.github.io/og-image.png">
+<link rel="icon" href="avatar.jpg">
+<link rel="apple-touch-icon" href="avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://aexinide.github.io/#website","url":"https://aexinide.github.io/","name":"AEXINIDE","alternateName":["aexinide","@aexinide"],"description":"AEXINIDE (@aexinide): building at the edge of AI, robotics, Linux kernels and quantum systems. Open-source projects, blog and contact.","inLanguage":"en","publisher":{"@id":"https://aexinide.github.io/#person"}},{"@type":"ProfilePage","@id":"https://aexinide.github.io/#profile","url":"https://aexinide.github.io/","name":"AEXINIDE (@aexinide) — AI, Robotics, Linux Kernels & Quantum Systems","isPartOf":{"@id":"https://aexinide.github.io/#website"},"mainEntity":{"@id":"https://aexinide.github.io/#person"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://aexinide.github.io/og-image.png","width":1200,"height":630}},{"@type":"Person","@id":"https://aexinide.github.io/#person","name":"AEXINIDE","alternateName":["aexinide","@aexinide"],"url":"https://aexinide.github.io/","image":"https://aexinide.github.io/avatar.jpg","description":"AEXINIDE (@aexinide): building at the edge of AI, robotics, Linux kernels and quantum systems. Open-source projects, blog and contact.","knowsAbout":["Artificial intelligence","Embodied AI","Robotics","Vision-Language-Action models","Linux kernel","Real-time systems","Quantum computing","Quantum error correction"],"sameAs":["https://github.com/aexinide","https://gitlab.com/aexinide","https://huggingface.co/aexinide","https://www.kaggle.com/aexinide","https://dev.to/aexinide","https://medium.com/@aexinide","https://leetcode.com/u/aexinide/","https://bsky.app/profile/aexinide.bsky.social","https://x.com/aexinide","https://www.instagram.com/aexinide/","https://www.tiktok.com/@aexinide","https://www.threads.com/@aexinide","https://www.youtube.com/@aexinide","https://t.me/aexinide","https://www.reddit.com/user/aexinide","https://www.pinterest.com/aexinide/","https://www.snapchat.com/@aexinide","https://matrix.to/#/@aexinide:matrix.org"]}]}</script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --desk:#0a1018;--bar:#0f1923;--line:#1b2735;--dim:#66778a;--blue:#38bdf8;--amber:#f59e0b;--green:#34d399;--red:#f87171;--tbg:#02050a;--tfg:#c9d6e2;
+ --gbg:#04080d;--gcard:#0a121b;--gline:#1b2735;--gtx:#e3ecf5;--gmut:#8da0b4;--gacc:#38bdf8;--gamb:#f59e0b;--ggrn:#34d399;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0;background:var(--desk)}
+body{display:flex;flex-direction:column;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:14px;line-height:1.5;color:var(--tfg);overflow:hidden}
+.spec{flex:none;display:flex;gap:18px;padding:7px 14px;font-size:11px;color:var(--dim);overflow-x:auto;white-space:nowrap;border-bottom:1px solid var(--line)}
+.spec b{color:var(--amber)}.spec .on{color:var(--green)}
+.win{flex:1;min-height:0;margin:10px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.tb{flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;padding:8px 12px;background:var(--bar);border-bottom:1px solid var(--line);font-size:12px}
+.dot{width:11px;height:11px;border-radius:50%}
+.ttl{color:var(--dim);margin-right:auto;white-space:nowrap}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{font:inherit;font-size:11px;padding:3px 10px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--blue);cursor:pointer;text-decoration:none}
+.tab:hover,.tab:focus-visible{border-color:var(--blue);color:#fff;outline:0}
+.tab.on{background:var(--blue);color:#02050a;border-color:var(--blue);font-weight:700}
+.tab.gh{color:var(--amber)}
+.pane{flex:1;min-height:0;display:flex;flex-direction:column}
+/* terminal view */
+#v-terminal{background:var(--tbg)}
+#screen{flex:1;min-height:0;overflow-y:auto;padding:14px 16px;cursor:text;word-break:break-word}
+#screen::-webkit-scrollbar{width:8px}#screen::-webkit-scrollbar-thumb{background:var(--line)}
+pre{margin:0;font:inherit;white-space:pre-wrap}
+.row{min-height:1.5em}
+.art{white-space:pre;line-height:1;font-weight:400;font-size:min(14px,calc((100vw - 64px)/34));color:var(--blue);margin:6px 0 4px}
+.art i{font-style:normal;color:var(--amber)}
+.p{color:var(--green);white-space:nowrap}.p b{color:var(--blue)}
+.b{color:var(--blue)}.a{color:var(--amber)}.g{color:var(--green)}.r{color:var(--red)}.d{color:var(--dim)}.w{color:#fff;font-weight:700}
+.line{display:flex;gap:8px;align-items:center}
+#in{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:inherit;caret-color:var(--amber);padding:0}
+.lnk{color:var(--blue);text-decoration:underline;cursor:pointer}
+.chips{flex:none;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;border-top:1px solid var(--line);background:var(--bar);font-size:11px;color:var(--dim)}
+.chip{font:inherit;font-size:11px;padding:1px 8px;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--green);cursor:pointer;text-decoration:none}
+.chip:hover,.chip:focus-visible{border-color:var(--green);color:#fff;outline:0}
+/* GUI views: different look (sans, light surface, rounded cards) */
+.gui{background:var(--gbg);color:var(--gtx);font-family:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:15px;line-height:1.6;overflow-y:auto;padding:clamp(18px,4vw,40px)}
+.gui .in{max-width:760px;margin:0 auto}
+.gui h1{font-size:clamp(24px,4vw,34px);line-height:1.15;margin:0 0 10px;font-weight:700;letter-spacing:-.02em}
+.gui p{margin:0 0 14px;color:var(--gmut);max-width:62ch}
+.gui .tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.gui .tag{padding:4px 12px;border-radius:99px;background:var(--gcard);border:1px solid var(--gline);font-size:13px}
+.gui blockquote{margin:22px 0;padding:4px 0 4px 16px;border-left:3px solid var(--gacc);color:var(--gtx)}
+.gui blockquote small{display:block;color:var(--gmut);margin-top:6px}
+.btn{font:inherit;font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;border:1px solid var(--gline);background:var(--gcard);color:var(--gtx);cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover,.btn:focus-visible{border-color:var(--gacc);outline:0}
+.btn.pri{background:var(--gacc);border-color:var(--gacc);color:#02050a}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
+.card{background:var(--gcard);border:1px solid var(--gline);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;border-left-width:4px}
+.card h3{margin:0;font-size:16px}
+.card .k{font-size:12px;color:var(--gmut)}
+.card ul{margin:0;padding-left:18px;font-size:13px;color:var(--gmut)}
+.card .btns{margin-top:auto;padding-top:8px}
+.crow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--gcard);border:1px solid var(--gline);border-radius:12px;padding:12px 16px;margin-bottom:10px}
+.crow span{color:var(--gmut);font-size:13px;min-width:70px}
+.crow b{font-weight:600;word-break:break-all}
+.crow .btn{margin-left:auto;padding:5px 12px}
+.big{font-size:clamp(28px,6vw,44px);font-weight:700;letter-spacing:-.02em;color:var(--gacc);margin:0 0 6px}
+
+#v-terminal{position:relative}
+#rain{position:absolute;inset:0;width:100%;height:100%;z-index:3;background:#02050a;cursor:pointer}
+.row{animation:rowin .18s ease-out}
+@keyframes rowin{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+.pane.enter{animation:paneIn .3s ease-out}
+@keyframes paneIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.gui.enter .card,.gui.enter .crow,.gui.enter .tag,.gui.enter h1,.gui.enter blockquote{animation:rise .5s ease-out both}
+.gui.enter .card:nth-child(2),.gui.enter .crow:nth-of-type(2),.gui.enter .tag:nth-child(2){animation-delay:.09s}
+.gui.enter .card:nth-child(3),.gui.enter .crow:nth-of-type(3),.gui.enter .tag:nth-child(3){animation-delay:.18s}
+.gui.enter .tag:nth-child(4),.gui.enter blockquote{animation-delay:.27s}
+.card{transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--gacc)}
+.tab,.btn,.chip{transition:background .15s,color .15s,border-color .15s}
+.btn:active,.tab:active{transform:scale(.97)}
+.pulse{display:inline-block;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.big{background:linear-gradient(90deg,var(--gacc),var(--gamb),var(--gacc));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.post{display:block;width:100%;text-align:left;font:inherit;color:var(--gtx);background:var(--gcard);border:1px solid var(--gline);border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:transform .2s,border-color .2s}
+.post:hover,.post:focus-visible{transform:translateY(-2px);border-color:var(--gacc);outline:0}
+.post h3{margin:2px 0 4px;font-size:17px}
+.post .meta,.rd .meta{font-size:12px;color:var(--gmut)}
+.post p{margin:6px 0 0;font-size:13.5px}
+.ptag{display:inline-block;margin-left:8px;padding:0 8px;border:1px solid var(--gline);border-radius:99px;font-size:11px;color:var(--gacc)}
+.rd .meta{margin:0 0 20px}
+.md h2,.md h3,.md h4{margin:26px 0 8px;line-height:1.25}
+.md p,.md li{color:var(--gtx);max-width:66ch}
+.md ul,.md ol{padding-left:22px;margin:0 0 14px}
+.md code{font-family:'JetBrains Mono',monospace;font-size:.88em;background:var(--gcard);border:1px solid var(--gline);border-radius:4px;padding:1px 5px}
+.md pre.code{font-family:'JetBrains Mono',monospace;font-size:13px;background:#02050a;border:1px solid var(--gline);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre;color:#c9d6e2}
+.md a{color:var(--gacc)}
+.back{margin-bottom:18px}
+
+.ava{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;border:2px solid var(--gacc);background:var(--gcard);color:var(--gacc);font-weight:700;flex:none;vertical-align:middle;font-family:'Sora',system-ui,sans-serif}
+.ava img{width:100%;height:100%;object-fit:cover;display:block}
+.ava.xs{width:22px;height:22px;font-size:11px;border-width:1px}
+.ava.sm{width:26px;height:26px;font-size:12px;border-width:1px;margin-right:8px}
+.ava.md{width:76px;height:76px;font-size:30px;margin-bottom:14px}
+.ava.lg{width:116px;height:116px;font-size:46px;margin-bottom:18px}
+.quote{flex:none;padding:10px 14px;border-top:1px solid var(--line);background:var(--bar);font-size:12.5px;line-height:1.55;cursor:pointer}
+#qt{color:#fff}
+.qa{color:var(--amber);font-weight:700;white-space:nowrap;margin-left:8px}
+.qin{animation:qfade .8s ease-out}
+@keyframes qfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.md img{max-width:100%;height:auto;border-radius:10px;border:1px solid var(--gline);display:block;margin:16px 0}
+.note{font-size:12px;color:var(--gamb)}
+
+.spec{color:#b4c2d1}
+#clock{margin-left:auto;padding-left:18px;color:var(--blue);font-weight:700}
+.quote{text-align:center}
+.qbox{max-width:680px;margin:0 auto}
+#qt{display:block}
+.qa{display:block;margin:6px 0 0;padding-right:6%;text-align:right}
+#v-projects .in{max-width:1120px}
+.gui .in.abt{max-width:900px;display:flex;align-items:flex-start;justify-content:space-between;gap:32px}
+.abt .txt{flex:1;min-width:0}
+.ava.xl{width:156px;height:156px;font-size:62px;margin:6px 0 0}
+@media (max-width:640px){.gui .in.abt{flex-direction:column-reverse;gap:18px}}
+#v-projects,#v-blog{scrollbar-width:none;-ms-overflow-style:none}
+#v-projects::-webkit-scrollbar,#v-blog::-webkit-scrollbar{display:none;width:0;height:0}
+
+/* the panes are flex columns, which shrink-wrapped .in; make these three fill their max-width */
+#v-projects .in,#v-blog .in,#v-about .in{width:100%}
+#v-projects .in,#v-blog .in{max-width:1100px}
+#v-about .in{margin:auto;padding-bottom:7vh}
+/* quote: one centered line, author right after it */
+.qbox{max-width:1100px;margin:0 auto}
+#qt{display:inline}
+.qa{display:inline;margin:0 0 0 12px;padding:0}
+/* no visible scrollbars anywhere (scrolling still works) */
+*{scrollbar-width:none;-ms-overflow-style:none}
+*::-webkit-scrollbar{display:none;width:0;height:0}
+
+.plist{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.prow{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--gcard);border:1px solid var(--gline);border-left:4px solid var(--c);border-radius:12px;padding:14px 18px;transition:transform .2s,border-color .2s}
+.prow:hover{transform:translateY(-2px);border-color:var(--c)}
+.prow .pi{flex:1;min-width:0}
+.prow .meta{font-size:12px;color:var(--gmut)}
+.prow h3{margin:2px 0 4px;font-size:17px}
+.prow p{margin:0;font-size:13.5px;max-width:none}
+.pspec{margin-top:6px;font-size:12px;color:var(--gmut)}
+.prow .btns{flex:none}
+.gui.enter .prow{animation:rise .5s ease-out both}
+.gui.enter .prow:nth-child(2){animation-delay:.09s}
+.gui.enter .prow:nth-child(3){animation-delay:.18s}
+@media (max-width:640px){.prow{flex-direction:column;align-items:flex-start}}
+
+/* ---------- small devices ---------- */
+@supports (height:100dvh){html,body{height:100dvh}}
+button,a,.tab,.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+@media (max-width:640px){
+ body{font-size:13px}
+ .spec{padding:6px 10px;gap:14px}
+ .win{margin:6px;border-radius:6px}
+ .tb{padding:8px 10px}
+ .tabs{flex:1 0 100%;flex-wrap:nowrap;overflow-x:auto;gap:6px}
+ .tab{flex:none;padding:7px 12px;font-size:12px}
+ #screen{padding:10px 12px;font-size:12px}
+ #in{font-size:16px}
+ .quote{padding:8px 10px;font-size:11.5px}
+ .gui{padding:18px 14px}
+ .ava.xl{width:110px;height:110px;font-size:44px;margin:0}
+ .prow .btns{width:100%}
+ .prow .btns .btn{flex:1;text-align:center}
+ .crow .btn{margin-left:0}
+}
+@media (max-width:420px){.btn{padding:8px 12px}}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+a.post{text-decoration:none}
+</style>
+</head>
+<body>
+<h1 class="sr">AEXINIDE (@aexinide): AI, robotics, Linux kernels and quantum systems</h1>
+<noscript><main style="font-family:monospace;color:#c9d6e2;background:#04080d;padding:24px;min-height:100vh"><h2>AEXINIDE (@aexinide)</h2><p>No name, no face, just the work. I build at the edge of AI, robotics, Linux kernels and quantum systems.</p><ul><li>EdgeVLA-Kernel: Vision-Language-Action runtime for edge hardware</li><li>AeroRT-Linux: real-time scheduling patches for satellites and drones</li><li>Q-Circuit AI: graph neural network decoder for quantum error correction</li></ul><p><a style="color:#38bdf8" href="https://github.com/aexinide">github.com/aexinide</a> · <a style="color:#38bdf8" href="mailto:aexinide@gmail.com">aexinide@gmail.com</a></p><p>Please enable JavaScript for the interactive terminal.</p></main></noscript>
+<div class="spec" aria-label="System status">
+  <span class="on"><span class="pulse">●</span> ONLINE</span><span>RAM <b>128T</b></span><span>CPU <b>core 99 1400K</b></span><span>VRAM <b>64T</b></span><span>STORAGE <b>∞</b></span><span>TEMP <b id="tmp">38°C</b></span><span>LAT <b id="lat">9ms</b></span>
+  <span>NET <b>zero-log</b></span><span>KERNEL <b>6.x-rt</b></span><span>LOC <b>ENCRYPTED_ORBIT</b></span><span>SESSION <b id="up">0m 00s</b></span><span id="clock">00:00:00 NPT</span>
+</div>
+
+<div class="win">
+  <div class="tb">
+    <span class="dot" style="background:#ef4444"></span><span class="dot" style="background:#f59e0b"></span><span class="dot" style="background:#10b981"></span>
+    <span class="ava xs"></span><span class="ttl" id="ttl">aexinide@world: ~</span>
+    <div class="tabs" role="tablist">
+      <button class="tab on" role="tab" id="tab-terminal" data-view="terminal">terminal</button>
+      <button class="tab" role="tab" id="tab-about" data-view="about">about</button>
+      <button class="tab" role="tab" id="tab-projects" data-view="projects">projects</button>
+      <button class="tab" role="tab" id="tab-blog" data-view="blog">blog</button>
+      <button class="tab" role="tab" id="tab-contact" data-view="contact">contact</button>
+      <a class="tab gh" href="https://github.com/aexinide" target="_blank" rel="noopener">github</a>
+    </div>
+  </div>
+
+  <section class="pane" id="v-terminal">
+    <canvas id="rain" hidden></canvas>
+    <div id="screen" role="log" aria-live="polite">
+      <div id="out"></div>
+      <div class="line"><span class="p" id="ps"></span><input id="in" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="terminal input"></div>
+    </div>
+    <div class="quote" id="quote" title="click for another"><div class="qbox"><span id="qt"></span><span class="qa">-aexinide</span></div></div>
+  </section>
+
+  <section class="pane gui" id="v-about" hidden><div class="in abt"><div class="txt">
+    <h1>Systems that run at the speed of the machine they control.</h1>
+    <p>Exploring the boundaries of intelligence and computation. I build at the edge of AI, robotics, Linux kernels and quantum systems.</p>
+    <div class="tags"><span class="tag">AI architectures</span><span class="tag">Embodied robotics</span><span class="tag">Linux kernels</span><span class="tag">Quantum systems</span></div>
+    <blockquote>When robots fail, it is not because the transformer lacks parameters; it is because the latency between cognition and actuation is choked by unoptimized software.<small>The Silicon-Muscle Gap, from the manifesto</small></blockquote>
+    <div class="btns"><button class="btn pri" data-view="projects">See projects</button><button class="btn" data-run="manifesto">Read manifesto in terminal</button></div>
+  </div><span class="ava xl"></span></div></section>
+
+  <section class="pane gui" id="v-projects" hidden><div class="in">
+    <h1>Projects</h1>
+    <p>Open-source work on getting models closer to the hardware.</p>
+    <div class="plist">
+    <div class="prow" style="--c:var(--gacc)"><div class="pi"><div class="meta">AI + robotics · v0.9.4</div><h3>EdgeVLA-Kernel</h3><p>Runtime for Vision-Language-Action models on edge hardware.</p><div class="pspec">25 Hz control loop · under 40 ms per step · 4.2 GB VRAM</div></div><div class="btns"><a class="btn pri" href="https://github.com/aexinide" target="_blank" rel="noopener">Code</a><button class="btn" data-run="inspect edgevla">Terminal</button></div></div>
+    <div class="prow" style="--c:var(--gamb)"><div class="pi"><div class="meta">Linux + aerospace</div><h3>AeroRT-Linux</h3><p>Hard real-time scheduling patches for satellites and drones.</p><div class="pspec">Preemption under 12 µs · watchdog recovery · ARM Cortex-R, RISC-V</div></div><div class="btns"><a class="btn pri" href="https://github.com/aexinide" target="_blank" rel="noopener">Code</a><button class="btn" data-run="inspect aerort">Terminal</button></div></div>
+    <div class="prow" style="--c:var(--ggrn)"><div class="pi"><div class="meta">Quantum compute</div><h3>Q-Circuit AI</h3><p>Graph neural network decoder for quantum error correction.</p><div class="pspec">Sub-microsecond decoding · PyTorch / Qiskit bridge · up to 128 logical qubits</div></div><div class="btns"><a class="btn pri" href="https://github.com/aexinide" target="_blank" rel="noopener">Code</a><button class="btn" data-run="inspect quantum">Terminal</button></div></div>
+    </div>
+  </div></section>
+
+  <section class="pane gui" id="v-blog" hidden><div class="in" id="blog-in"></div></section>
+
+  <section class="pane gui" id="v-contact" hidden><div class="in">
+    <span class="ava md"></span>
+    <h1>Find me as</h1>
+    <div class="big">@aexinide</div>
+    <div class="crow"><span>Email</span><b>aexinide@gmail.com</b><a class="btn pri" href="mailto:aexinide@gmail.com">Write</a></div>
+    <div class="crow"><span>GitHub</span><b>github.com/aexinide</b><a class="btn" href="https://github.com/aexinide" target="_blank" rel="noopener">Open</a></div>
+    <div class="crow"><span>Matrix</span><b>@aexinide:matrix.org</b><button class="btn" id="copy">Copy username</button></div>
+  </div></section>
+</div>
+
+<script>
+var POSTS=[];
+(function(){
+var out=document.getElementById('out'),inp=document.getElementById('in'),scr=document.getElementById('screen'),ps=document.getElementById('ps'),ttl=document.getElementById('ttl');
+var user='aexinide',host='world',cwd='~',hist=[],hi=0,busy=false,view='terminal';
+try{hist=JSON.parse(localStorage.getItem('ax_hist')||'[]');}catch(e){hist=[];}
+hi=hist.length;
+try{localStorage.removeItem('ax_user');}catch(e){}
+var THEMES={sky:'#38bdf8',green:'#34d399',amber:'#f59e0b',violet:'#a78bfa',rose:'#fb7185'};
+function applyTheme(n){var c=THEMES[n];if(!c)return false;var r=document.documentElement.style;r.setProperty('--blue',c);r.setProperty('--gacc',c);try{localStorage.setItem('ax_theme',n);}catch(e){}return true;}
+try{var th0=localStorage.getItem('ax_theme');if(th0)applyTheme(th0);}catch(e){}
+var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function prompt(){return '<span class="p"><b>'+user+'@'+host+'</b>: <span class="b">'+esc(cwd)+'</span> $</span>';}
+function setPs(){ps.innerHTML='<b>'+user+'@'+host+'</b>: <span class="b">'+esc(cwd)+'</span> $';if(view==='terminal')ttl.textContent='aexinide@world: '+cwd;}
+function print(h){var d=document.createElement('pre');d.className='row';d.innerHTML=h;out.appendChild(d);scr.scrollTop=scr.scrollHeight;}
+function sleep(ms){return new Promise(function(r){setTimeout(r,ms);});}
+
+/* ---------- window: one frame, swappable views ---------- */
+var VIEWS=['terminal','about','projects','blog','contact'];
+var TITLES={terminal:'AEXINIDE (@aexinide) — AI, Robotics, Linux Kernels & Quantum Systems',about:'About — AEXINIDE (@aexinide)',projects:'Projects — AEXINIDE (@aexinide)',blog:'Blog — AEXINIDE (@aexinide)',contact:'Contact — AEXINIDE (@aexinide)'};
+function show(v){
+ view=v;
+ VIEWS.forEach(function(n){
+  document.getElementById('v-'+n).hidden=(n!==v);
+  var t=document.getElementById('tab-'+n);t.classList.toggle('on',n===v);t.setAttribute('aria-selected',n===v);
+ });
+ var pn=document.getElementById('v-'+v);pn.classList.remove('enter');void pn.offsetWidth;pn.classList.add('enter');
+ ttl.textContent=v==='terminal'?'aexinide@world: '+cwd:'aexinide / '+v;
+ document.title=TITLES[v]||TITLES.terminal;
+ try{history.replaceState(null,'',v==='terminal'?location.pathname+location.search:'#'+v);}catch(e){}
+ if(v==='terminal')inp.focus({preventScroll:true});
+}
+document.addEventListener('click',function(e){
+ var el=e.target.closest('[data-view],[data-run],[data-post],[data-blog]');if(!el)return;
+ if(el.dataset.post){e.preventDefault();openPost(el.dataset.post);return;}
+ if(el.dataset.blog){blogList();return;}
+ if(el.dataset.view)show(el.dataset.view);
+ if(el.dataset.run){show('terminal');if(!busy)run(el.dataset.run);}
+});
+document.addEventListener('keydown',function(e){if(e.altKey&&e.key>='1'&&e.key<='5'){e.preventDefault();show(VIEWS[+e.key-1]);}});
+var cp=document.getElementById('copy');
+cp.addEventListener('click',function(){try{navigator.clipboard.writeText('aexinide').then(function(){cp.textContent='Copied';});}catch(e){cp.textContent='aexinide';}});
+
+/* ---------- banner ---------- */
+var L={
+ A:[' █████╗ ','██╔══██╗','███████║','██╔══██║','██║  ██║','╚═╝  ╚═╝'],
+ E:['███████╗','██╔════╝','█████╗  ','██╔══╝  ','███████╗','╚══════╝'],
+ X:['██╗  ██╗','╚██╗██╔╝',' ╚███╔╝ ',' ██╔██╗ ','██╔╝ ██╗','╚═╝  ╚═╝'],
+ I:['██╗','██║','██║','██║','██║','╚═╝'],
+ N:['███╗   ██╗','████╗  ██║','██╔██╗ ██║','██║╚██╗██║','██║ ╚████║','╚═╝  ╚═══╝'],
+ D:['██████╗ ','██╔══██╗','██║  ██║','██║  ██║','██████╔╝','╚═════╝ ']};
+function banner(){
+ var w='AEXINIDE'.split(''),rows=[];
+ for(var r=0;r<6;r++)rows.push(w.map(function(c){return L[c][r];}).join(''));
+ rows.push('<i>'+'═'.repeat(56)+'</i>');
+ var d=document.createElement('div');d.className='art';out.appendChild(d);
+ return new Promise(function(res){var i=0;(function step(){d.innerHTML=rows.slice(0,i+1).join('\n');scr.scrollTop=scr.scrollHeight;i++;if(i<rows.length)setTimeout(step,reduced?0:110);else res();})();});
+}
+
+/* ---------- avatar ---------- */
+var AVATAR='avatar.jpg';
+function mountAvatars(root){(root||document).querySelectorAll('.ava:not([data-m])').forEach(function(el){el.setAttribute('data-m','1');el.textContent='A';var im=new Image();im.alt='aexinide';im.onload=function(){el.textContent='';el.appendChild(im);};im.src=AVATAR;});}
+mountAvatars();
+
+/* ---------- blog: reads blog/posts.json and blog/*.md at runtime, no build step ---------- */
+var FALLBACK=[{slug:'first-entry',title:'First entry',date:'2026-10-09',tags:['meta'],cover:'',body:'This is a sample post. On your site, the blog reads the list in `blog/posts.json` and each markdown file next to it.\n\n## Add a post\n\n1. Create `blog/2026-10-10-my-post.md`.\n2. Add its file name to `blog/posts.json`.\n3. Commit. Nothing to build.'}];
+var sampleMode=false,postsReady=false;
+function blogSrc(src){if(/^https?:\/\//i.test(src))return src;if(/^[a-z]+:/i.test(src))return '';return 'blog/'+src.replace(/^\.?\//,'');}
+function mdInline(t){
+ return t.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g,function(_,alt,src){var u=blogSrc(src);return u?'<a href="'+u+'" target="_blank" rel="noopener"><img src="'+u+'" alt="'+alt+'" loading="lazy"></a>':'';})
+  .replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>').replace(/\*([^*]+)\*/g,'<i>$1</i>')
+  .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+}
+function md(src){
+ var lines=src.replace(/\r/g,'').split('\n'),o=[],code=[],inCode=false,list=null,para=[],m,i;
+ function fp(){if(para.length){o.push('<p>'+mdInline(esc(para.join(' ')))+'</p>');para=[];}}
+ function fl(){if(list){o.push('</'+list+'>');list=null;}}
+ for(i=0;i<lines.length;i++){
+  var l=lines[i];
+  if(/^```/.test(l)){if(inCode){o.push('<pre class="code">'+esc(code.join('\n'))+'</pre>');code=[];inCode=false;}else{fp();fl();inCode=true;}continue;}
+  if(inCode){code.push(l);continue;}
+  if(/^\s*!\[[^\]]*\]\([^)\s]+\)\s*$/.test(l)){fp();fl();o.push(mdInline(esc(l.trim())));continue;}
+  if((m=l.match(/^(#{1,3})\s+(.*)/))){fp();fl();var n=Math.max(2,m[1].length);o.push('<h'+n+'>'+mdInline(esc(m[2]))+'</h'+n+'>');continue;}
+  if((m=l.match(/^[-*]\s+(.*)/))){fp();if(list!=='ul'){fl();o.push('<ul>');list='ul';}o.push('<li>'+mdInline(esc(m[1]))+'</li>');continue;}
+  if((m=l.match(/^\d+\.\s+(.*)/))){fp();if(list!=='ol'){fl();o.push('<ol>');list='ol';}o.push('<li>'+mdInline(esc(m[1]))+'</li>');continue;}
+  if(/^>\s?/.test(l)){fp();fl();o.push('<blockquote>'+mdInline(esc(l.replace(/^>\s?/,'')))+'</blockquote>');continue;}
+  if(!l.trim()){fp();fl();continue;}
+  para.push(l);
+ }
+ fp();fl();if(inCode)o.push('<pre class="code">'+esc(code.join('\n'))+'</pre>');
+ return o.join('');
+}
+function parsePost(file,text){
+ var meta={},body=text.replace(/\r/g,''),m=body.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
+ if(m){m[1].split('\n').forEach(function(l){var i=l.indexOf(':');if(i>0)meta[l.slice(0,i).trim().toLowerCase()]=l.slice(i+1).trim();});body=m[2];}
+ if((meta.draft||'').toLowerCase()==='true')return null;
+ var stem=file.replace(/\.md$/i,''),dm=stem.match(/^(\d{4}-\d{2}-\d{2})/);
+ return{slug:stem.replace(/^\d{4}-\d{2}-\d{2}-?/,'')||stem,title:meta.title||stem,date:meta.date||(dm?dm[1]:''),
+  tags:(meta.tags||'').split(',').map(function(t){return t.trim();}).filter(Boolean),cover:meta.cover||'',body:body.trim()};
+}
+var bi=document.getElementById('blog-in');
+function mins(p){return Math.max(1,Math.round(p.body.split(/\s+/).length/200))+' min read';}
+function tagsHtml(p){return (p.tags||[]).map(function(t){return '<span class="ptag">'+esc(t)+'</span>';}).join('');}
+function blogList(){
+ var h='<h1>Blog</h1><p>My thoughts, my views, my suggestions, and anything else I feel like talking about.</p>';
+ if(!postsReady)h+='<p>Loading posts…</p>';
+ else{
+  if(sampleMode)h+='<p class="note">Preview mode: showing a sample post. On your site this reads blog/posts.json.</p>';
+  if(!POSTS.length)h+='<p>No posts yet.</p>';
+  POSTS.forEach(function(p){
+   var ex=p.body.replace(/!\[[^\]]*\]\([^)]*\)/g,'').replace(/[#>*`\[\]]|^-\s/gm,'').replace(/\s+/g,' ').trim().slice(0,150);
+   h+='<a class="post" href="blog/'+encodeURIComponent(p.slug)+'/" data-post="'+esc(p.slug)+'"><div class="meta">'+esc(p.date)+' · '+mins(p)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(ex)+'…</p></a>';
+  });
+ }
+ bi.innerHTML=h;document.getElementById('v-blog').scrollTop=0;
+}
+function openPost(slug){
+ var p=POSTS.filter(function(x){return x.slug===slug;})[0];if(!p)return;
+ bi.innerHTML='<button class="btn back" data-blog="list">← All posts</button><article class="rd"><h1>'+esc(p.title)+'</h1><div class="meta"><span class="ava sm"></span>aexinide · '+esc(p.date)+' · '+mins(p)+tagsHtml(p)+'</div><div class="md">'+md(p.body)+'</div></article>';
+ mountAvatars(bi);document.getElementById('v-blog').scrollTop=0;
+}
+function loadPosts(){
+ var v='?v='+Date.now();
+ return fetch('blog/posts.json'+v).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(list){
+  return Promise.all(list.map(function(f){return fetch('blog/'+encodeURIComponent(f)+v).then(function(r){return r.ok?r.text():null;}).then(function(t){return t==null?null:parsePost(f,t);}).catch(function(){return null;});}));
+ }).then(function(arr){POSTS=arr.filter(Boolean);}).catch(function(){POSTS=FALLBACK;sampleMode=true;})
+ .then(function(){POSTS.sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:0;});setupBlogFS();postsReady=true;blogList();});
+}
+blogList();
+
+/* ---------- virtual filesystem ---------- */
+var FS={'~':{items:['about.txt','manifesto.txt','contact.txt','projects']},'~/projects':{items:['edgevla-kernel','aerort-linux','q-circuit-ai']}};
+var FILES={
+ '~/about.txt':'No name, no face, just the work.\nI build at the edge of AI, robotics, Linux kernels and quantum systems.\nThe goal: push models closer to the metal with zero bloat.',
+ '~/manifesto.txt':'<span class="a w">THE SILICON-MUSCLE GAP</span>\n\nMost AI researchers live in the cloud. They treat physical robotics as an\nafterthought API call. When robots fail, it is not because the transformer\nlacks parameters; it is because the latency between silicon cognition and\nphysical actuation is choked by unoptimized software stacks.\n\nAexinide builds the bridge: bare-metal inference, asynchronous token\nstreaming, and flawless physics integration.',
+ '~/contact.txt':'Username : <span class="w">@aexinide</span>\nEmail    : <a class="lnk" href="mailto:aexinide@gmail.com">aexinide@gmail.com</a>\nGitHub   : <a class="lnk" href="https://github.com/aexinide" target="_blank" rel="noopener">github.com/aexinide</a>\nMatrix   : <span class="w">@aexinide:matrix.org</span>\nPGP      : <span class="w">4F89 B2C1 90A3 77E2</span>\n<span class="d">Search @aexinide on any platform. Unsolicited recruiters go to /dev/null.</span>',
+ '~/projects/edgevla-kernel':'<span class="b w">EdgeVLA-Kernel v0.9.4</span>  <span class="d">[AI + ROBOTICS]</span>\nCUDA/C++ inference engine for Vision-Language-Action models on edge\nhardware such as Jetson AGX Orin. Action-chunking and a quantized vision\nbackbone cut latency by 60%.\n  - target    : bimanual robotic arms, AMRs\n  - latency   : &lt; 40 ms per step (25 Hz control loop)\n  - memory    : 4.2 GB VRAM',
+ '~/projects/aerort-linux':'<span class="a w">AeroRT-Linux patch</span>  <span class="d">[LINUX + AEROSPACE]</span>\nHard real-time scheduling patches for Linux, giving deterministic thread\nexecution in high-vibration, high-radiation satellite and drone payloads.\n  - preemption latency : &lt; 12 µs\n  - fault recovery     : integrated watchdog\n  - target             : ARM Cortex-R, RISC-V',
+ '~/projects/q-circuit-ai':'<span class="g w">Q-Circuit AI syndrome decoder</span>  <span class="d">[QUANTUM]</span>\nHybrid classical-quantum framework: lightweight graph neural networks\ndecode error syndromes in real time to stop decoherence cascades.\n  - framework : PyTorch / Qiskit bridge\n  - inference : sub-microsecond syndrome analysis\n  - scale     : tested up to 128 logical qubits'
+};
+FS['~'].items.splice(3,0,'blog');
+FS['~/blog']={items:[]};
+function setupBlogFS(){
+ FS['~/blog']={items:POSTS.map(function(p){return p.slug+'.md';})};
+ POSTS.forEach(function(p){FILES['~/blog/'+p.slug+'.md']='<span class="a w">'+esc(p.title)+'</span>  <span class="d">'+esc(p.date)+'</span>\n\n'+esc(p.body);});
+}
+var ALIAS={projects:'~/projects',edgevla:'~/projects/edgevla-kernel',aerort:'~/projects/aerort-linux',quantum:'~/projects/q-circuit-ai'};
+function resolve(p){
+ if(!p)return cwd;if(p==='~')return '~';
+ if(p==='..')return cwd==='~'?'~':(cwd.slice(0,cwd.lastIndexOf('/'))||'~');
+ if(p==='.')return cwd;
+ p=p.replace(/\/+$/,'');
+ if(p.indexOf('~')===0)return p;
+ return cwd+'/'+p;
+}
+
+/* ---------- commands ---------- */
+var C={};
+C.help=function(){
+ var rows=[['help','list commands'],['ls [dir]','list directory'],['cd &lt;dir&gt;','change directory'],['cat &lt;file&gt;','print a file'],['pwd','working directory'],
+ ['about, manifesto, contact','read in terminal'],['projects','list projects'],['inspect &lt;name&gt;','edgevla, aerort, quantum'],['banner','show the AEXINIDE art'],
+ ['blog [number|slug]','list posts or read one'],['open &lt;view&gt;','switch window: about, projects, blog, contact'],['gui','switch to the point-and-click view'],['github, email','links'],['neofetch','system info'],['su &lt;name&gt;','change your username (now: '+esc(user)+')'],['theme [name]','sky, green, amber, violet, rose'],['matrix [text]','rain of "aexinide" or your own text; any key exits'],['matrix digit','classic digital rain (0-9)'],['quote','a line from aexinide'],['fortune, uptime','small extras'],['Alt+1..5','switch window views'],['whoami, echo, history','the usual'],['date','Nepal date and time'],['time','Nepal time, and how far ahead or behind your device is'],['clear','clear screen (Ctrl+L)']];
+ print('<span class="a w">Available commands</span>   <span class="d">Tab completes, ↑/↓ browses history.</span>');
+ rows.forEach(function(r){var pad=r[0].replace(/&lt;|&gt;/g,'_');print('  <span class="w">'+r[0]+'</span>'+' '.repeat(Math.max(2,30-pad.length))+'<span class="d">'+r[1]+'</span>');});
+};
+C.about=function(){print(FILES['~/about.txt']);};
+C.manifesto=function(){print(FILES['~/manifesto.txt']);};
+C.contact=function(){print(FILES['~/contact.txt']);};
+C.quantum=function(){print(FILES['~/projects/q-circuit-ai']);};
+C.banner=function(){banner();};
+C.blog=function(a){
+ if(!postsReady){print('<span class="d">loading posts…</span>');return;}
+ if(!POSTS.length){print('<span class="d">no posts yet</span>');return;}
+ var k=(a[0]||'').toLowerCase();
+ if(!k){
+  print('<span class="a w">Blog</span>');
+  POSTS.forEach(function(p,i){print('  <span class="d">'+(i+1)+'.</span> <span class="d">'+esc(p.date)+'</span>  <span class="w">'+esc(p.slug)+'</span>  '+esc(p.title));});
+  print('<span class="d">blog &lt;number|slug&gt; to read here, "open blog" for the reader.</span>');return;
+ }
+ var p=POSTS.filter(function(x,i){return x.slug.toLowerCase()===k||String(i+1)===k;})[0];
+ if(!p){print('<span class="r">blog: no such post: '+esc(k)+'</span>');return;}
+ print(FILES['~/blog/'+p.slug+'.md']);
+};
+C.projects=function(){
+ print('<span class="a w">Open-source projects</span>');
+ print('  <span class="b w">edgevla-kernel</span>   Vision-Language-Action runtime for robotic arms');
+ print('  <span class="a w">aerort-linux</span>     Real-time Linux patches for space-grade hardware');
+ print('  <span class="g w">q-circuit-ai</span>     Hybrid quantum error-correction decoder');
+ print('<span class="d">Run "inspect &lt;name&gt;" for details.</span>');
+};
+C.inspect=function(a){
+ var k=(a[0]||'').toLowerCase();
+ if(!k){print('<span class="r">usage: inspect &lt;edgevla|aerort|quantum&gt;</span>');return;}
+ var m=null;
+ Object.keys(ALIAS).forEach(function(n){if(k===n)m=ALIAS[n];});
+ Object.keys(FILES).forEach(function(f){if(f.indexOf('~/projects/')===0&&f.split('/').pop()===k)m=f;});
+ if(!m||!FILES[m]){print('<span class="r">inspect: no such project: '+esc(k)+'</span>');return;}
+ print(FILES[m]);
+};
+C.open=function(a){var v=(a[0]||'').toLowerCase();if(VIEWS.indexOf(v)<0){print('<span class="r">usage: open &lt;about|projects|blog|contact&gt;</span>');return;}show(v);};
+C.gui=function(){show('about');};
+C.github=function(){print('GitHub: <a class="lnk" href="https://github.com/aexinide" target="_blank" rel="noopener">github.com/aexinide</a>');window.open('https://github.com/aexinide','_blank','noopener');};
+C.email=function(){print('<a class="lnk" href="mailto:aexinide@gmail.com">aexinide@gmail.com</a>');};
+C.pwd=function(){print(cwd==='~'?'/home/'+user:'/home/'+user+cwd.slice(1));};
+C.whoami=function(){print(user);};
+function npt(){return new Date().toLocaleString('en-GB',{timeZone:'Asia/Kathmandu',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false})+' NPT';}
+C.date=function(){print(npt());};
+C.time=function(){
+ var diff=345-(-new Date().getTimezoneOffset()),ab=Math.abs(diff),h=Math.floor(ab/60),m=ab%60,tz='your device';
+ try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||tz;}catch(e){}
+ print('Nepal : <span class="w">'+npt()+'</span> <span class="d">(UTC+05:45)</span>');
+ print('You   : <span class="w">'+new Date().toLocaleTimeString('en-GB',{hour12:false})+'</span> <span class="d">('+esc(tz)+')</span>');
+ print(diff===0?'<span class="g">Nepal is on the same time as you.</span>':'Nepal is <span class="a w">'+h+' hrs '+m+' min 0 sec '+(diff>0?'ahead of':'behind')+'</span> you.');
+};
+C.echo=function(a){print(esc(a.join(' ')));};
+C.history=function(){hist.forEach(function(h,i){print('<span class="d">'+String(i+1).padStart(4)+'</span>  '+esc(h));});};
+C.clear=function(){out.innerHTML='';};
+C.ls=function(a){
+ var p=resolve(a[0]);
+ if(FILES[p]){print(esc(a[0]));return;}
+ var d=FS[p];
+ if(!d){print('<span class="r">ls: cannot access \''+esc(a[0]||'')+'\': No such file or directory</span>');return;}
+ print(d.items.map(function(i){return FS[p+'/'+i]?'<span class="b w">'+i+'/</span>':i;}).join('   '));
+};
+C.cd=function(a){
+ var p=resolve(a[0]);
+ if(FILES[p]){print('<span class="r">cd: '+esc(a[0])+': Not a directory</span>');return;}
+ if(!FS[p]){print('<span class="r">cd: '+esc(a[0]||'')+': No such file or directory</span>');return;}
+ cwd=p;setPs();
+};
+C.cat=function(a){
+ if(!a[0]){print('<span class="r">usage: cat &lt;file&gt;</span>');return;}
+ var p=resolve(a[0]);
+ if(FS[p]){print('<span class="r">cat: '+esc(a[0])+': Is a directory</span>');return;}
+ if(!FILES[p]){print('<span class="r">cat: '+esc(a[0])+': No such file or directory</span>');return;}
+ print(FILES[p]);
+};
+C.neofetch=function(){
+ var art=['    ___   _  __','   /   | | |/ /','  / /| | |   / ',' / ___ |/   |  ','/_/  |_/_/|_|  '];
+ var info=['<b class="b">'+esc(user)+'</b>@<b class="b">'+esc(host)+'</b>','-----------------','<span class="a">OS</span>: AexOS 4.8 (hardened)','<span class="a">Kernel</span>: 6.x-aerort-rt','<span class="a">Shell</span>: bash 5.2','<span class="a">CPU</span>: core 99 1400K','<span class="a">RAM</span>: 128T  <span class="a">VRAM</span>: 64T','<span class="a">Storage</span>: ∞'];
+ for(var i=0;i<Math.max(art.length,info.length);i++)print('<span class="b">'+esc((art[i]||'').padEnd(18))+'</span>'+(info[i]||''));
+};
+C.sudo=function(){print('<span class="r">'+esc(user)+' is not in the sudoers file. This incident will be reported.</span>');};
+C.exit=function(){print('<span class="d">logout\nThere is nowhere to go. Type "help".</span>');};
+C.rm=function(){print('<span class="r">rm: read-only file system. Nice try.</span>');};
+C.su=function(a){
+ var n=(a[0]||'').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,16);
+ if(!n){print('<span class="r">usage: su &lt;name&gt;   (letters, numbers, - and _)</span>');return;}
+ user=n;setPs();print('now logged in as <span class="w">'+esc(n)+'</span>');
+};
+C.login=C.su;
+C.theme=function(a){
+ var n=(a[0]||'').toLowerCase();
+ if(!n){print('themes: '+Object.keys(THEMES).map(function(k){return '<span style="color:'+THEMES[k]+'">'+k+'</span>';}).join('  ')+'\n<span class="d">usage: theme &lt;name&gt;</span>');return;}
+ if(applyTheme(n))print('theme set to <span class="w">'+esc(n)+'</span>');else print('<span class="r">theme: unknown "'+esc(n)+'"</span>');
+};
+var FORT=['Latency is a feature request you forgot to file.','The best abstraction is the one the hardware never notices.','Every bug is a timing bug if you stare long enough.','Measure twice, patch the kernel once.','A 25 Hz loop does not care about your roadmap.','Zero bloat is a habit, not a milestone.'];
+C.fortune=function(){print('<span class="a">&gt;</span> '+FORT[Math.floor(Math.random()*FORT.length)]);};
+C.uptime=function(){var u=Math.floor((Date.now()-t0)/1000);print('up '+Math.floor(u/60)+' min, '+(u%60)+' s, 1 user, load average: 0.42, 0.37, 0.31');};
+var rainOn=false;
+C.matrix=function(a){
+ if(rainOn)return;
+ if(reduced){print('<span class="d">matrix: skipped (reduced motion is on)</span>');return;}
+ var word=a.join(' ').trim().slice(0,40),low=word.toLowerCase();
+ var digital=(low==='digit'||low==='digits'||low==='digital');
+ var chars=Array.from(digital?'0123456789':(word.replace(/\s+/g,'')||'aexinide'));
+ var cv=document.getElementById('rain'),pane=document.getElementById('v-terminal');
+ rainOn=true;cv.hidden=false;cv.width=pane.clientWidth;cv.height=pane.clientHeight;
+ var ctx=cv.getContext('2d'),sz=16,cols=Math.floor(cv.width/sz),dr=[],k;
+ for(k=0;k<cols;k++)dr[k]=Math.floor(Math.random()*-30);
+ var col=getComputedStyle(document.documentElement).getPropertyValue('--blue')||'#38bdf8';
+ var id=setInterval(function(){
+  ctx.fillStyle='rgba(2,5,10,.14)';ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.font='bold '+sz+'px monospace';
+  for(var j=0;j<cols;j++){
+   ctx.fillStyle=col;ctx.fillText(chars[Math.floor(Math.random()*chars.length)],j*sz,dr[j]*sz);
+   if(dr[j]*sz>cv.height&&Math.random()>.975)dr[j]=0;dr[j]++;
+  }
+ },55);
+ var armed,to;
+ function stop(){clearInterval(id);clearTimeout(to);clearTimeout(armed);cv.hidden=true;rainOn=false;document.removeEventListener('keydown',stop);cv.removeEventListener('click',stop);inp.focus({preventScroll:true});}
+ /* arm the exit listeners after the Enter keypress that started this has finished bubbling */
+ armed=setTimeout(function(){document.addEventListener('keydown',stop);cv.addEventListener('click',stop);},300);
+ to=setTimeout(stop,20000);
+ print('<span class="d">matrix: '+(digital?'digital rain':'raining "'+esc(word||'aexinide')+'"')+' - press any key or click to exit</span>');
+};
+var QUOTES=['The last invention will not be a machine that thinks. It will be the moment we stop caring whether it does.','We are not building tools anymore. We are drafting our own successors and calling it progress.','By 2050 no one will ask if the machine is conscious. They will ask why we needed to be.','Freedom is the first thing we will trade for convenience, and the last thing we will notice is missing.','Whoever owns intelligence owns the century. Whoever fears it owns nothing.','Truth will not die in the age of AI. It will become a luxury product.'];
+var qi=Math.floor(Math.random()*QUOTES.length),qt=document.getElementById('qt');
+function showQuote(){qt.classList.remove('qin');void qt.offsetWidth;qt.textContent='"'+QUOTES[qi]+'"';qt.classList.add('qin');}
+showQuote();setInterval(function(){qi=(qi+1)%QUOTES.length;showQuote();},12000);
+document.getElementById('quote').addEventListener('click',function(){qi=(qi+1)%QUOTES.length;showQuote();});
+C.quote=function(){print('<span class="a">&gt;</span> "'+esc(QUOTES[Math.floor(Math.random()*QUOTES.length)])+'" <span class="a w">-aexinide</span>');};
+var NAMES=Object.keys(C);
+
+function run(line){
+ var raw=line.trim();
+ print(prompt()+' <span class="w">'+esc(line)+'</span>');
+ if(!raw)return;
+ if(hist[hist.length-1]!==raw){hist.push(raw);try{localStorage.setItem('ax_hist',JSON.stringify(hist.slice(-100)));}catch(e){}}
+ hi=hist.length;
+ var parts=raw.split(/\s+/),cmd=parts[0].toLowerCase();
+ if(Object.prototype.hasOwnProperty.call(C,cmd))C[cmd](parts.slice(1));
+ else print('<span class="r">bash: '+esc(parts[0])+': command not found</span>  <span class="d">(try "help")</span>');
+}
+function complete(){
+ var v=inp.value,parts=v.split(/\s+/),last=parts[parts.length-1],cands;
+ if(parts.length===1)cands=NAMES.filter(function(n){return n.indexOf(last.toLowerCase())===0;});
+ else{
+  var dir=last.indexOf('/')>-1?last.slice(0,last.lastIndexOf('/')+1):'',base=last.slice(dir.length),d=FS[dir?resolve(dir):cwd];
+  cands=d?d.items.filter(function(i){return i.indexOf(base)===0;}).map(function(i){return dir+i;}):[];
+ }
+ if(cands.length===1){parts[parts.length-1]=cands[0];inp.value=parts.join(' ')+(parts.length===1?' ':'');}
+ else if(cands.length>1){
+  print(prompt()+' <span class="w">'+esc(v)+'</span>');print(cands.map(esc).join('   '));
+  var p=cands[0];cands.forEach(function(c){while(c.indexOf(p)!==0)p=p.slice(0,-1);});
+  if(p.length>last.length){parts[parts.length-1]=p;inp.value=parts.join(' ');}
+ }
+}
+inp.addEventListener('keydown',function(e){
+ if(busy){e.preventDefault();return;}
+ if(e.key==='Enter'){var v=inp.value;inp.value='';run(v);}
+ else if(e.key==='ArrowUp'){e.preventDefault();if(hi>0){hi--;inp.value=hist[hi];}}
+ else if(e.key==='ArrowDown'){e.preventDefault();if(hi<hist.length-1){hi++;inp.value=hist[hi];}else{hi=hist.length;inp.value='';}}
+ else if(e.key==='Tab'){e.preventDefault();complete();}
+ else if(e.ctrlKey&&e.key.toLowerCase()==='l'){e.preventDefault();C.clear();}
+ else if(e.ctrlKey&&e.key.toLowerCase()==='c'){e.preventDefault();print(prompt()+' <span class="w">'+esc(inp.value)+'</span>^C');inp.value='';}
+});
+scr.addEventListener('click',function(){if(!window.getSelection().toString())inp.focus({preventScroll:true});});
+
+var t0=Date.now();
+function tick(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kathmandu',hour12:false})+' NPT';var u=Math.floor((Date.now()-t0)/1000);document.getElementById('up').textContent=Math.floor(u/60)+'m '+String(u%60).padStart(2,'0')+'s';}
+setInterval(tick,1000);tick();
+setInterval(function(){document.getElementById('tmp').textContent=(36+Math.floor(Math.random()*5))+'°C';document.getElementById('lat').textContent=(7+Math.floor(Math.random()*5))+'ms';},2200);
+
+async function boot(){
+ busy=true;
+ print('<span class="d">[ 0.000] AexOS 4.8 secure node booting…</span>');await sleep(160);
+ print('<span class="d">[ 0.214]</span> modules: <span class="g">[ OK ]</span> ai-inference  <span class="g">[ OK ]</span> realtime-linux  <span class="g">[ OK ]</span> quantum-sim');await sleep(160);
+ await banner();
+ print('<span class="d">independent research: AI, embodied robotics, Linux kernels, quantum systems</span>');
+ print('Type <span class="a w">help</span> for commands, or use the tabs above for the point-and-click view.\n');
+ setPs();busy=false;inp.focus({preventScroll:true});
+}
+mountAvatars();loadPosts();
+setPs();boot();
+var h0=(location.hash||'').slice(1);if(VIEWS.indexOf(h0)>0)show(h0);
+})();
+</script>
+</body>
+</html>
