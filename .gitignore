@@ -1,9 +1,11 @@
 # rebuilt by build.py on every deploy (GitHub Actions), never commit these
-sitemap.xml
 feed.xml
-blog/posts.json
-blog/*/index.html
 README.md
+mynote.txt
+
+sync.sh
+
+blogs/blog-template.html
 
 # editor and OS junk
 .DS_Store

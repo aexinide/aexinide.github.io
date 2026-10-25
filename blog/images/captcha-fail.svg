@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-label="A checkbox labeled I'm not a robot, followed by the error: Try again. Something went wrong.">
-<rect width="800" height="360" fill="#0a121b"/><rect x="1" y="1" width="798" height="358" fill="none" stroke="#1b2735" stroke-width="2"/>
-<rect x="190" y="95" width="420" height="96" rx="8" fill="#04080d" stroke="#2b3d51" stroke-width="2"/>
-<rect x="218" y="124" width="38" height="38" rx="4" fill="none" stroke="#8da0b4" stroke-width="3"/>
-<text x="280" y="152" font-family="sans-serif" font-size="26" fill="#e3ecf5">I'm not a robot</text>
-<text x="400" y="244" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="700" fill="#f87171">Try again. Something went wrong.</text>
-<text x="400" y="288" text-anchor="middle" font-family="monospace" font-size="18" fill="#8da0b4">attempt #7, thumb soaked, still human</text>
-</svg>

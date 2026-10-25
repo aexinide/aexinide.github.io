@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="/">
+<title>Projects — AEXINIDE</title>
+<meta name="description" content="AEXINIDE (@aexinide) is an online alias building at the edge of AI, robotics, Linux kernels and quantum systems. Projects, blog and archive.">
+<meta name="author" content="aexinide">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://aexinide.is-a.dev/projects/">
+<link rel="alternate" type="application/rss+xml" title="AEXINIDE blog" href="/feed.xml">
+<meta name="theme-color" content="#0a1018">
+<meta name="color-scheme" content="dark">
+<!-- Search engine verification: uncomment and paste your codes after adding the site in each console -->
+<!-- <meta name="google-site-verification" content="PASTE_CODE_HERE"> -->
+<!-- <meta name="msvalidate.01" content="PASTE_CODE_HERE"> -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AEXINIDE">
+<meta property="og:title" content="AEXINIDE | AI, Robotics, Linux & Quantum">
+<meta property="og:description" content="AEXINIDE (@aexinide) is an online alias building at the edge of AI, robotics, Linux kernels and quantum systems. Projects, blog and archive.">
+<meta property="og:url" content="https://aexinide.is-a.dev/projects/">
+<meta property="og:image" content="https://aexinide.is-a.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AEXINIDE block-letter banner with @aexinide">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@aexinide">
+<meta name="twitter:creator" content="@aexinide">
+<meta name="twitter:title" content="AEXINIDE | AI, Robotics, Linux & Quantum">
+<meta name="twitter:description" content="AEXINIDE (@aexinide) is an online alias building at the edge of AI, robotics, Linux kernels and quantum systems. Projects, blog and archive.">
+<meta name="twitter:image" content="https://aexinide.is-a.dev/og-image.png">
+<link rel="icon" href="avatar.jpg">
+<link rel="apple-touch-icon" href="avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://aexinide.is-a.dev/#website","url":"https://aexinide.is-a.dev/","name":"AEXINIDE","alternateName":["aexinide","@aexinide"],"description":"AEXINIDE (@aexinide) is an online alias building at the edge of AI, robotics, Linux kernels and quantum systems. Projects, blog and archive.","inLanguage":"en","publisher":{"@id":"https://aexinide.is-a.dev/#person"}},{"@type":"ProfilePage","@id":"https://aexinide.is-a.dev/#profile","url":"https://aexinide.is-a.dev/","name":"AEXINIDE | AI, Robotics, Linux & Quantum","isPartOf":{"@id":"https://aexinide.is-a.dev/#website"},"mainEntity":{"@id":"https://aexinide.is-a.dev/#person"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://aexinide.is-a.dev/og-image.png","width":1200,"height":630}},{"@type":"Person","@id":"https://aexinide.is-a.dev/#person","name":"AEXINIDE","alternateName":["aexinide","@aexinide"],"url":"https://aexinide.is-a.dev/","image":"https://aexinide.is-a.dev/avatar.jpg","description":"AEXINIDE (@aexinide) is an online alias building at the edge of AI, robotics, Linux kernels and quantum systems. Projects, blog and archive.","knowsAbout":["Artificial intelligence","Embodied AI","Robotics","Vision-Language-Action models","Linux kernel","Real-time systems","Quantum computing","Quantum error correction"],"sameAs":["https://github.com/aexinide","https://gitlab.com/aexinide","https://huggingface.co/aexinide","https://www.kaggle.com/aexinide","https://dev.to/aexinide","https://medium.com/@aexinide","https://leetcode.com/u/aexinide/","https://bsky.app/profile/aexinide.bsky.social","https://x.com/aexinide","https://www.instagram.com/aexinide/","https://www.tiktok.com/@aexinide","https://www.threads.com/@aexinide","https://www.youtube.com/@aexinide","https://t.me/aexinide","https://www.reddit.com/user/aexinide","https://www.pinterest.com/aexinide/","https://www.snapchat.com/@aexinide","https://matrix.to/#/@aexinide:matrix.org"]}]}</script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Unbounded:wght@800&family=Sora:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --desk:#0a1018;--bar:#0f1923;--line:#1b2735;--dim:#66778a;--blue:#38bdf8;--amber:#f59e0b;--green:#34d399;--red:#f87171;--tbg:#02050a;--tfg:#c9d6e2;
+ --gbg:#04080d;--gcard:#0a121b;--gline:#1b2735;--gtx:#e3ecf5;--gmut:#8da0b4;--gacc:#38bdf8;--gamb:#f59e0b;--ggrn:#34d399;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0;background:var(--desk)}
+body{display:flex;flex-direction:column;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:14px;line-height:1.5;color:var(--tfg);overflow:hidden}
+.spec{flex:none;display:flex;gap:18px;padding:7px 14px;font-size:11px;color:var(--dim);overflow-x:auto;white-space:nowrap;border-bottom:1px solid var(--line)}
+.spec .v{color:var(--amber)}.spec .on{color:var(--green)}
+.win{flex:1;min-height:0;margin:10px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.tb{flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;padding:8px 12px;background:var(--bar);border-bottom:1px solid var(--line);font-size:12px}
+.dot{width:11px;height:11px;border-radius:50%}
+.ttl{color:var(--dim);margin-right:auto;white-space:nowrap}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{font:inherit;font-size:11px;padding:3px 10px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--blue);cursor:pointer;text-decoration:none}
+.tab:hover,.tab:focus-visible{border-color:var(--blue);color:#fff;outline:0}
+.tab.on{background:var(--blue);color:#02050a;border-color:var(--blue);font-weight:700}
+.tab.gh{color:var(--amber)}
+.pane{flex:1;min-height:0;display:flex;flex-direction:column}
+/* terminal view */
+#screen{flex:1;min-height:0;overflow-y:auto;padding:14px 16px;cursor:text;word-break:break-word}
+#screen::-webkit-scrollbar{width:8px}#screen::-webkit-scrollbar-thumb{background:var(--line)}
+pre{margin:0;font:inherit;white-space:pre-wrap}
+.row{min-height:1.5em}
+.art{white-space:pre;line-height:1;font-weight:400;font-size:min(12px,calc((100vw - 64px)/34));color:var(--blue);margin:6px 0 4px}
+.art i{font-style:normal;color:var(--amber)}
+.p{color:var(--green);white-space:nowrap}.p b{color:var(--blue)}
+.b{color:var(--blue)}.a{color:var(--amber)}.g{color:var(--green)}.r{color:var(--red)}.d{color:var(--dim)}.w{color:#fff;font-weight:700}
+.line{display:flex;gap:8px;align-items:center}
+#in{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:inherit;caret-color:var(--amber);padding:0}
+.lnk{color:var(--blue);text-decoration:underline;cursor:pointer}
+.chips{flex:none;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;border-top:1px solid var(--line);background:var(--bar);font-size:11px;color:var(--dim)}
+.chip{font:inherit;font-size:11px;padding:1px 8px;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--green);cursor:pointer;text-decoration:none}
+.chip:hover,.chip:focus-visible{border-color:var(--green);color:#fff;outline:0}
+/* GUI views: different look (sans, light surface, rounded cards) */
+.gui{background:var(--gbg);color:var(--gtx);font-family:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:15px;line-height:1.6;overflow-y:auto;padding:clamp(18px,4vw,40px)}
+.gui .in{max-width:760px;margin:0 auto}
+.gui h1,.gui h2.pt{font-size:clamp(24px,4vw,34px);line-height:1.15;margin:0 0 10px;font-weight:700;letter-spacing:-.02em}
+.gui p{margin:0 0 14px;color:var(--gmut);max-width:62ch}
+.gui .tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.gui .tag{padding:4px 12px;border-radius:99px;background:var(--gcard);border:1px solid var(--gline);font-size:13px}
+.gui blockquote{margin:22px 0;padding:4px 0 4px 16px;border-left:3px solid var(--gacc);color:var(--gtx)}
+.gui blockquote small{display:block;color:var(--gmut);margin-top:6px}
+.btn{font:inherit;font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;border:1px solid var(--gline);background:var(--gcard);color:var(--gtx);cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover,.btn:focus-visible{border-color:var(--gacc);outline:0}
+.btn.pri{background:var(--gacc);border-color:var(--gacc);color:#02050a}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
+.card{background:var(--gcard);border:1px solid var(--gline);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;border-left-width:4px}
+.card h3{margin:0;font-size:16px}
+.card .k{font-size:12px;color:var(--gmut)}
+.card ul{margin:0;padding-left:18px;font-size:13px;color:var(--gmut)}
+.card .btns{margin-top:auto;padding-top:8px}
+.crow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--gcard);border:1px solid var(--gline);border-radius:12px;padding:12px 16px;margin-bottom:10px}
+.crow span{color:var(--gmut);font-size:13px;min-width:70px}
+.crow .cv{font-weight:600;word-break:break-all}
+.crow .btn{margin-left:auto;padding:5px 12px}
+.big{font-size:clamp(28px,6vw,44px);font-weight:700;letter-spacing:-.02em;color:var(--gacc);margin:0 0 6px}
+
+#rain{position:absolute;inset:0;width:100%;height:100%;z-index:3;background:#02050a;cursor:pointer}
+.row{animation:rowin .18s ease-out}
+@keyframes rowin{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+.pane.enter{animation:paneIn .3s ease-out}
+@keyframes paneIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.gui.enter .card,.gui.enter .crow,.gui.enter .tag,.gui.enter h2.pt,.gui.enter h1,.gui.enter blockquote{animation:rise .5s ease-out both}
+.gui.enter .card:nth-child(2),.gui.enter .crow:nth-of-type(2),.gui.enter .tag:nth-child(2){animation-delay:.09s}
+.gui.enter .card:nth-child(3),.gui.enter .crow:nth-of-type(3),.gui.enter .tag:nth-child(3){animation-delay:.18s}
+.gui.enter .tag:nth-child(4),.gui.enter blockquote{animation-delay:.27s}
+.card{transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--gacc)}
+.tab,.btn,.chip{transition:background .15s,color .15s,border-color .15s}
+.btn:active,.tab:active{transform:scale(.97)}
+.pulse{display:inline-block;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.big{background:linear-gradient(90deg,var(--gacc),var(--gamb),var(--gacc));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.post{display:block;width:100%;text-align:left;font:inherit;color:var(--gtx);background:var(--gcard);border:1px solid var(--gline);border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:transform .2s,border-color .2s}
+.post:hover,.post:focus-visible{transform:translateY(-2px);border-color:var(--gacc);outline:0}
+.post h3{margin:2px 0 4px;font-size:17px}
+.post .meta,.rd .meta{font-size:12px;color:var(--gmut)}
+.post p{margin:6px 0 0;font-size:13.5px}
+.ptag{display:inline-block;margin-left:8px;padding:0 8px;border:1px solid var(--gline);border-radius:99px;font-size:11px;color:var(--gacc)}
+.rd .meta{margin:0 0 20px}
+.md h2,.md h3,.md h4{margin:26px 0 8px;line-height:1.25}
+.md p,.md li{color:var(--gtx);max-width:66ch}
+.md ul,.md ol{padding-left:22px;margin:0 0 14px}
+.md code{font-family:'JetBrains Mono',monospace;font-size:.88em;background:var(--gcard);border:1px solid var(--gline);border-radius:4px;padding:1px 5px}
+.md pre.code{font-family:'JetBrains Mono',monospace;font-size:13px;background:#02050a;border:1px solid var(--gline);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre;color:#c9d6e2}
+.md a{color:var(--gacc)}
+.back{margin-bottom:18px}
+
+.ava{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;border:2px solid var(--gacc);background:var(--gcard);color:var(--gacc);font-weight:700;flex:none;vertical-align:middle;font-family:'Sora',system-ui,sans-serif}
+.ava img{width:100%;height:100%;object-fit:cover;display:block}
+.ava.xs{width:22px;height:22px;font-size:11px;border-width:1px}
+.ava.sm{width:26px;height:26px;font-size:12px;border-width:1px;margin-right:8px}
+.ava.md{width:76px;height:76px;font-size:30px;margin-bottom:14px}
+.ava.lg{width:116px;height:116px;font-size:46px;margin-bottom:18px}
+.quote{flex:none;padding:10px 14px;border-top:1px solid var(--line);background:var(--bar);font-size:12.5px;line-height:1.55;cursor:pointer}
+#qt{color:#fff}
+.qa{color:var(--amber);font-weight:700;white-space:nowrap;margin-left:8px}
+.qin{animation:qfade .8s ease-out}
+@keyframes qfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.md img{max-width:100%;height:auto;border-radius:10px;border:1px solid var(--gline);display:block;margin:16px 0}
+.note{font-size:12px;color:var(--gamb)}
+
+.spec{color:#b4c2d1}
+#clock{margin-left:auto;padding-left:18px;color:var(--blue);font-weight:700}
+.quote{text-align:center}
+.qbox{max-width:680px;margin:0 auto}
+#qt{display:block}
+.qa{display:block;margin:6px 0 0;padding-right:6%;text-align:right}
+#v-projects .in{max-width:1120px}
+.gui .in.abt{max-width:900px;display:flex;align-items:flex-start;justify-content:space-between;gap:32px}
+.abt .txt{flex:1;min-width:0}
+.ava.xl{width:156px;height:156px;font-size:62px;margin:6px 0 0}
+@media (max-width:640px){.gui .in.abt{flex-direction:column-reverse;gap:18px}}
+#v-projects,#v-blog,#v-archive{scrollbar-width:none;-ms-overflow-style:none}
+#v-projects::-webkit-scrollbar,#v-blog::-webkit-scrollbar,#v-archive::-webkit-scrollbar{display:none;width:0;height:0}
+
+/* the panes are flex columns, which shrink-wrapped .in; make these fill their max-width */
+#v-projects .in,#v-blog .in,#v-about .in,#v-archive .in{width:100%}
+#v-projects .in,#v-blog .in,#v-archive .in{max-width:1100px}
+#v-about .in{margin:auto;padding-bottom:7vh}
+/* quote: one centered line, author right after it */
+.qbox{max-width:1100px;margin:0 auto}
+#qt{display:inline}
+.qa{display:inline;margin:0 0 0 12px;padding:0}
+/* no visible scrollbars anywhere (scrolling still works) */
+*{scrollbar-width:none;-ms-overflow-style:none}
+*::-webkit-scrollbar{display:none;width:0;height:0}
+
+.plist{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.prow{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--gcard);border:1px solid var(--gline);border-left:4px solid var(--c);border-radius:12px;padding:14px 18px;transition:transform .2s,border-color .2s}
+.prow:hover{transform:translateY(-2px);border-color:var(--c)}
+.prow .pi{flex:1;min-width:0}
+.prow .meta{font-size:12px;color:var(--gmut)}
+.prow h3{margin:2px 0 4px;font-size:17px}
+.prow p{margin:0;font-size:13.5px;max-width:none}
+.pspec{margin-top:6px;font-size:12px;color:var(--gmut)}
+.prow .btns{flex:none}
+.gui.enter .prow{animation:rise .5s ease-out both}
+.gui.enter .prow:nth-child(2){animation-delay:.09s}
+.gui.enter .prow:nth-child(3){animation-delay:.18s}
+@media (max-width:640px){.prow{flex-direction:column;align-items:flex-start}}
+
+/* ---------- stage + boxes ---------- */
+.stage{flex:1;min-height:0;position:relative;display:flex;flex-direction:column;background:var(--gbg)}
+#stars{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.pane.gui{position:relative;z-index:1;background:transparent;padding:clamp(14px,3vw,32px)}
+.gui .in,.hbox{width:100%;max-width:860px;margin:auto;padding:clamp(20px,4vw,40px);background:rgba(8,14,22,.74);border:1px solid var(--gline);border-radius:22px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+#v-projects .in,#v-blog .in,#v-archive .in{max-width:980px}
+#v-about .in{padding-bottom:clamp(20px,4vw,40px)}
+/* home */
+.hbox{text-align:center;display:flex;flex-direction:column;align-items:center}
+.ava.hero{width:168px;height:168px;font-size:64px;margin:0 0 18px;border-width:3px;box-shadow:0 0 0 6px rgba(56,189,248,.08),0 0 40px rgba(56,189,248,.25)}
+.gui .hname{font-family:'Unbounded','Sora',sans-serif;font-weight:800;font-size:clamp(26px,7.2vw,58px);line-height:1.15;letter-spacing:.06em;padding-left:.06em;margin:0 0 6px;background:linear-gradient(90deg,var(--gacc),#a78bfa,var(--gamb));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(56,189,248,.25))}
+.gui .htxt{max-width:60ch;margin:12px auto 0;font-size:15.5px;line-height:1.8;color:var(--gmut)}
+.gui .htxt b{color:var(--gtx);font-weight:600}
+.hbox .btns{justify-content:center;margin-top:26px}
+.gui.enter .hbox{animation:rise .6s ease-out both}
+/* terminal window */
+.termwin{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(2,5,10,.65);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.termbox{display:flex;flex-direction:column;width:min(920px,100%);height:min(600px,85vh);background:var(--tbg);border:1px solid var(--line);border-radius:12px;box-shadow:0 30px 90px rgba(0,0,0,.7);overflow:hidden;animation:pop .2s ease-out}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(8px)}to{opacity:1;transform:none}}
+.termbox .art{font-size:min(14px,calc((100vw - 64px)/34))}
+.termbar{flex:none;display:flex;align-items:center;gap:7px;padding:7px 10px;background:var(--bar);border-bottom:1px solid var(--line);font-size:11px}
+.termbar .dot{width:10px;height:10px}
+.termttl{color:var(--dim);margin-left:6px}
+.termbody{flex:1;min-height:0;position:relative;display:flex;flex-direction:column}
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:22px}
+.pcard{background:var(--gcard);border:1px solid var(--gline);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-3px);border-color:var(--gacc);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.phd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.phd h3{margin:0;font-size:17px;word-break:break-word}
+.pst{font-size:12px;color:var(--gmut);white-space:nowrap}
+.pd{margin:0;font-size:13.5px;max-width:none}
+.ptags{display:flex;flex-wrap:wrap;gap:6px}
+.ptags span{padding:2px 10px;border-radius:99px;font-size:11.5px;color:var(--gacc);border:1px solid var(--gline);background:rgba(56,189,248,.06)}
+.pft{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid var(--gline);font-size:12px;color:var(--gmut)}
+.pl i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.pact{display:flex;gap:8px;flex-wrap:wrap}
+.pd:empty,.ptags:empty,.pst:empty{display:none}
+.btn svg{vertical-align:-3px;margin-right:6px}
+.pall{display:flex;justify-content:center;margin-top:26px}
+.btn.pill{border-radius:99px;padding:12px 26px}
+.gui.enter .pcard{animation:rise .5s ease-out both}
+/* contact icons */
+.amp{display:flex;align-items:center;gap:14px;color:var(--gmut);margin:24px 0 18px}
+.amp::before,.amp::after{content:"";flex:1;height:1px;background:var(--gline)}
+.soc{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.si{position:relative;width:42px;height:42px;border:1px solid var(--gline);border-radius:12px;background:var(--gcard);color:var(--gmut);transition:transform .2s,color .2s,border-color .2s}
+.si::before{content:"";position:absolute;inset:10px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+.si:hover,.si:focus-visible{color:var(--gacc);border-color:var(--gacc);transform:translateY(-2px);outline:0}
+
+/* ---------- archive ---------- */
+.soon{display:inline-block;align-self:flex-start;padding:0 8px;border:1px solid var(--gline);border-radius:99px;font-size:11px;color:var(--gamb)}
+.card .ico{font-size:26px;line-height:1}
+
+/* ---------- small devices ---------- */
+@supports (height:100dvh){html,body{height:100dvh}}
+button,a,.tab,.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+@media (max-width:640px){
+ body{font-size:13px}
+ .spec{padding:6px 10px;gap:14px}
+ .win{margin:6px;border-radius:6px}
+ .tb{padding:8px 10px}
+ .tabs{flex:1 0 100%;flex-wrap:nowrap;overflow-x:auto;gap:6px}
+ .tab{flex:none;padding:7px 12px;font-size:12px}
+ #screen{padding:10px 12px;font-size:12px}
+ #in{font-size:16px}
+ .quote{padding:8px 10px;font-size:11.5px}
+ .gui{padding:18px 14px}
+ .ava.xl{width:110px;height:110px;font-size:44px;margin:0}
+ .ava.hero{width:132px;height:132px;font-size:52px}
+ .prow .btns{width:100%}
+ .prow .btns .btn{flex:1;text-align:center}
+ .crow .btn{margin-left:0}
+}
+@media (max-width:420px){.btn{padding:8px 12px}}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+a.post{text-decoration:none}
+/* ---------- v3 ---------- */
+.pane.gui{padding:0 clamp(14px,3vw,32px)}
+.pane.gui .in,.pane.gui .hbox{margin:0 auto;flex:1 0 auto;border-top:0;border-bottom:0;border-radius:0}
+.pane.gui .hbox{padding-top:clamp(28px,6vh,56px)}
+.gui h2.pt{font-family:'Dancing Script','Sora',cursive;font-weight:700;font-size:clamp(38px,6vw,56px);line-height:1.1;letter-spacing:0;text-align:center;color:var(--gacc);margin:8px 0 10px}
+.gui .sub{text-align:center;margin:0 auto 26px;max-width:60ch;font-size:16px}
+.pgrid .sub{grid-column:1/-1}
+.pgrid .pst{display:flex;gap:12px}
+#v-contact .in{text-align:center}
+#v-contact .ava.md{display:flex;margin:0 auto 14px}
+.blist{list-style:disc;padding-left:22px;margin:0;font-size:16px;line-height:2.1}
+.blist li{color:var(--gtx)}
+.blist .bd{color:var(--gacc);font-weight:600}
+.blist a{color:var(--gacc)}
+.termx{margin-left:auto;background:transparent;border:0;color:var(--dim);font:inherit;font-size:14px;line-height:1;cursor:pointer;padding:2px 6px;border-radius:4px}
+.termx:hover,.termx:focus-visible{color:#fff;background:var(--line);outline:0}
+
+
+/* No-AI badge — fixed at the bottom-right */
+.no-ai-badge {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 999;
+  display: block;
+  width: 88px;
+  height: auto;
+  line-height: 0;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.no-ai-badge img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.no-ai-badge:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .no-ai-badge {
+    right: 8px;
+    bottom: 8px;
+    width: 72px;
+  }
+}
+
+</style>
+</head>
+<body>
+<noscript><main style="font-family:monospace;color:#c9d6e2;background:#04080d;padding:24px;min-height:100vh"><h2>AEXINIDE (@aexinide)</h2><p>AEXINIDE is just an online name for a person who stays out of the picture. I build at the edge of AI, robotics, Linux kernels and quantum systems, and I share what I learn through open-source projects, a blog and an archive of things I love.</p><h2>Projects</h2><ul><li>EdgeVLA-Kernel: Vision-Language-Action runtime for edge hardware</li><li>AeroRT-Linux: real-time scheduling patches for satellites and drones</li><li>Q-Circuit AI: graph neural network decoder for quantum error correction</li></ul><p><a style="color:#38bdf8" href="https://github.com/aexinide">GitHub</a> · <a style="color:#38bdf8" href="/blogs/">Blog</a> · <a style="color:#38bdf8" href="mailto:aexinide@gmail.com">Email</a></p><p>Please enable JavaScript for the interactive terminal.</p></main></noscript>
+<div class="spec" aria-label="System status">
+  <span class="on"><span class="pulse">●</span> ONLINE</span><span>RAM <span class="v">128T</span></span><span>CPU <span class="v">core 99 1400K</span></span><span>VRAM <span class="v">64T</span></span><span>STORAGE <span class="v">∞</span></span><span>TEMP <span class="v" id="tmp">38°C</span></span><span>LAT <span class="v" id="lat">9ms</span></span>
+  <span>NET <span class="v">zero-log</span></span><span>KERNEL <span class="v">6.x-rt</span></span><span>LOC <span class="v">ENCRYPTED_ORBIT</span></span><span>SESSION <span class="v" id="up">0m 00s</span></span><span id="clock">00:00:00 UTC</span>
+</div>
+
+<div class="win">
+  <div class="tb">
+    <span class="dot" style="background:#ef4444"></span><span class="dot" style="background:#f59e0b"></span><span class="dot" style="background:#10b981"></span>
+    <span class="ava xs" data-view="home" style="cursor:pointer" title="home"></span><span class="ttl" id="ttl" data-view="home" style="cursor:pointer">aexinide@world: ~</span>
+    <div class="tabs" role="tablist">
+      <a class="tab" role="tab" id="tab-projects" href="/projects/" data-view="projects">Projects</a>
+      <a class="tab" role="tab" id="tab-blog" href="/blogs/" data-view="blog">Blog</a>
+      <a class="tab" role="tab" id="tab-archive" href="/archive/" data-view="archive">Archive</a>
+      <a class="tab" role="tab" id="tab-contact" href="/contact/" data-view="contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="stage"><canvas id="stars"></canvas>
+  <section class="pane gui" id="v-home"><div class="hbox">
+    <span class="ava hero"></span>
+    <h1 class="hname">AEXINIDE</h1>
+    <p class="htxt">AEXINIDE is just an online name. The person behind it stays out of the picture, so all that is left is the work. I am a <b>computer science student</b> currently in my <b>third year</b>, and I love building things <b>close to the metal</b>: AI, robotics, Linux kernels and quantum systems. I learn by shipping open-source projects, breaking things, and writing down what I find.</p>
+    <p class="htxt">Right now I am exploring how to make models run faster on small hardware, how real-time schedulers behave under load, and how error correction might scale. When I am not coding I read papers, tinker with my Linux setup, and collect things from the internet that I like.</p>
+    <p class="htxt">This site is my corner of the internet: projects, blog, and an archive of things I love. Want the hacker experience? Click <a class="lnk" href="/#terminal" data-view="terminal">terminal</a> and a terminal popup opens. </p>
+    <!-- <div class="btns">
+      <a class="btn pri" href="/projects/" data-view="projects">Projects</a>
+      <a class="btn" href="/blogs/" data-view="blog">Blog</a>
+      <a class="btn" href="/archive/" data-view="archive">Archive</a>
+      <a class="btn" href="/contact/" data-view="contact">Contact</a>
+      <a class="btn" href="https://github.com/aexinide" target="_blank" rel="noopener">GitHub</a>
+    </div> -->
+    <a href="https://aexinide.is-a.dev/" target="_blank">
+      <img src="aexinide-88x31.gif" alt="@aexinide" width="88" height="31" style="image-rendering: pixelated;">
+    </a>
+  </div></section>
+
+
+  <section class="pane gui" id="v-projects" hidden><div class="in">
+    <h2 class="pt">Projects</h2>
+    <p class="sub">A collection of my open-source projects and experiments.</p>
+    <div class="pgrid" id="pgrid"></div>
+    <div class="pall"><a class="btn pill" id="pall" href="https://github.com/aexinide?tab=repositories" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View all repositories on GitHub</a></div>
+  </div></section>
+
+  <section class="pane gui" id="v-blog" hidden><div class="in" id="blog-in"></div></section>
+
+  <section class="pane gui" id="v-archive" hidden><div class="in">
+    <h2 class="pt">Archive</h2>
+    <p class="sub">A collection of things from the internet that I love: quotes, GIFs, styles, buttons, emoji, colors and more. Work in progress.</p>
+    <div class="cards">
+      <div class="card" style="border-left-color:var(--gacc)"><span class="ico">❝</span><h3>Quotes</h3><div class="k">Lines worth keeping.</div><span class="soon">soon</span></div>
+      <div class="card" style="border-left-color:var(--gamb)"><span class="ico">🎞️</span><h3>GIFs</h3><div class="k">Loops that live rent free.</div><span class="soon">soon</span></div>
+      <div class="card" style="border-left-color:var(--ggrn)"><span class="ico">✦</span><h3>Styles</h3><div class="k">Fonts, layouts, vibes.</div><span class="soon">soon</span></div>
+      <div class="card" style="border-left-color:var(--gacc)"><span class="ico">▣</span><h3>Buttons</h3><div class="k">UI details I admire.</div><span class="soon">soon</span></div>
+      <div class="card" style="border-left-color:var(--gamb)"><span class="ico">😎</span><h3>Emoji</h3><div class="k">The ones I actually use.</div><span class="soon">soon</span></div>
+      <div class="card" style="border-left-color:var(--ggrn)"><span class="ico">🎨</span><h3>Colors</h3><div class="k">Palettes I keep coming back to.</div><span class="soon">soon</span></div>
+    </div>
+  </div></section>
+
+  <section class="pane gui" id="v-contact" hidden><div class="in">
+    <span class="ava md"></span>
+    <h2 class="pt">Find me as</h2>
+    <div class="big">@aexinide</div>
+    <div class="crow"><span>Email</span><div class="cv">username [at] gmail [dot] com</div></div>
+    <div class="crow"><span>GitHub</span><div class="cv">github.com/aexinide</div></div>
+    <!-- <div class="crow"><span>Matrix</span><div class="cv">@aexinide:matrix.org</div></div> -->
+    <div class="amp">&amp; others</div>
+    <div class="soc"><!-- Discord: replace YOUR_DISCORD_ID with your numeric Discord user id -->
+      <a class="si" href="https://discord.com/users/1533497802448175305" target="_blank" rel="me noopener" aria-label="Discord" title="Discord" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/discord.svg)"></a>
+      <a class="si" href="https://matrix.to/#/@aexinide:matrix.org" target="_blank" rel="me noopener" aria-label="Matrix" title="Matrix" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/matrix.svg)"></a>
+      <a class="si" href="https://t.me/aexinide" target="_blank" rel="me noopener" aria-label="Telegram" title="Telegram" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/telegram.svg)"></a>
+    </div>
+  </div></section>
+  </div>
+</div>
+
+<div class="termwin" id="termwin" hidden>
+  <div class="termbox">
+    <div class="termbar"><span class="termttl">aexinide / terminal <span class="d">· esc to close</span></span><button class="termx" id="termclose" aria-label="Close terminal" title="Close (Esc)">✕</button></div>
+    <div class="termbody" id="termbody">
+      <canvas id="rain" hidden></canvas>
+      <div id="screen" role="log" aria-live="polite">
+        <div id="out"></div>
+        <div class="line"><span class="p" id="ps"></span><input id="in" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="terminal input"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<a
+  class="no-ai-badge"
+  href="https://notbyai.fyi/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="This website was not created by AI"
+  title="This website was not created by AI"
+>
+  <img src="assets/no-ai.svg" alt="Not by AI" width="88" height="31">
+</a>
+
+
+<script>
+var POSTS=[];
+(function(){
+var out=document.getElementById('out'),inp=document.getElementById('in'),scr=document.getElementById('screen'),ps=document.getElementById('ps'),ttl=document.getElementById('ttl');
+var user='aexinide',host='world',cwd='~',hist=[],hi=0,busy=false,view='home';
+try{hist=JSON.parse(localStorage.getItem('ax_hist')||'[]');}catch(e){hist=[];}
+hi=hist.length;
+try{localStorage.removeItem('ax_user');}catch(e){}
+var THEMES={sky:'#38bdf8',green:'#34d399',amber:'#f59e0b',violet:'#a78bfa',rose:'#fb7185'};
+function applyTheme(n){var c=THEMES[n];if(!c)return false;var r=document.documentElement.style;r.setProperty('--blue',c);r.setProperty('--gacc',c);try{localStorage.setItem('ax_theme',n);}catch(e){}return true;}
+try{var th0=localStorage.getItem('ax_theme');if(th0)applyTheme(th0);}catch(e){}
+var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function prompt(){return '<span class="p"><b>'+user+'@'+host+'</b>: <span class="b">'+esc(cwd)+'</span> $</span>';}
+function setPs(){ps.innerHTML='<b>'+user+'@'+host+'</b>: <span class="b">'+esc(cwd)+'</span> $';}
+function print(h){var d=document.createElement('pre');d.className='row';d.innerHTML=h;out.appendChild(d);scr.scrollTop=scr.scrollHeight;}
+function sleep(ms){return new Promise(function(r){setTimeout(r,ms);});}
+
+/* ---------- window: one frame, swappable views ---------- */
+var VIEWS=['home','projects','blog','archive','contact'];
+var SITE='https://aexinide.is-a.dev',PATH={home:'/',projects:'/projects/',blog:'/blogs/',archive:'/archive/',contact:'/contact/'};
+function viewFromPath(){var q=(location.pathname.split('/').filter(Boolean)[0]||'').replace(/\.html$/,'');return {projects:'projects',blogs:'blog',blog:'blog',archive:'archive',contact:'contact'}[q]||'home';}
+var TITLES={home:'AEXINIDE | AI, Robotics, Linux & Quantum',terminal:'Terminal — AEXINIDE',projects:'Projects — AEXINIDE',blog:'Blog — AEXINIDE',archive:'Archive — AEXINIDE',contact:'Contact — AEXINIDE'};
+function show(v,np){
+ if(v==='terminal'){openTerm();return;}
+ if(VIEWS.indexOf(v)<0)v='home';
+ view=v;
+ VIEWS.forEach(function(n){
+  document.getElementById('v-'+n).hidden=(n!==v);
+  var t=document.getElementById('tab-'+n);if(t){t.classList.toggle('on',n===v);t.setAttribute('aria-selected',n===v);}
+ });
+ var pn=document.getElementById('v-'+v);pn.classList.remove('enter');void pn.offsetWidth;pn.classList.add('enter');
+ ttl.textContent=v==='home'?'aexinide@world: ~':'aexinide / '+v;
+ document.title=TITLES[v]||TITLES.home;
+ var cl=document.querySelector('link[rel=canonical]');if(cl)cl.href=SITE+PATH[v];
+ if(!np&&location.pathname!==PATH[v]){try{history.pushState(null,'',PATH[v]);}catch(e){}}
+}
+document.addEventListener('click',function(e){
+ var el=e.target.closest('[data-view],[data-run],[data-post],[data-blog]');if(!el)return;
+ if(el.dataset.post){e.preventDefault();openPost(el.dataset.post);return;}
+ if(el.dataset.blog){blogList();return;}
+ if(el.dataset.view){if(el.tagName==='A'){if(e.ctrlKey||e.metaKey||e.shiftKey||e.button===1)return;e.preventDefault();}show(el.dataset.view);}
+ if(el.dataset.run){show('terminal');if(!busy)run(el.dataset.run);}
+});
+document.addEventListener('keydown',function(e){if(e.altKey&&e.key>='1'&&e.key<='5'){e.preventDefault();show(VIEWS[+e.key-1]);}});
+
+/* ---------- banner ---------- */
+var L={
+ A:[' █████╗ ','██╔══██╗','███████║','██╔══██║','██║  ██║','╚═╝  ╚═╝'],
+ E:['███████╗','██╔════╝','█████╗  ','██╔══╝  ','███████╗','╚══════╝'],
+ X:['██╗  ██╗','╚██╗██╔╝',' ╚███╔╝ ',' ██╔██╗ ','██╔╝ ██╗','╚═╝  ╚═╝'],
+ I:['██╗','██║','██║','██║','██║','╚═╝'],
+ N:['███╗   ██╗','████╗  ██║','██╔██╗ ██║','██║╚██╗██║','██║ ╚████║','╚═╝  ╚═══╝'],
+ D:['██████╗ ','██╔══██╗','██║  ██║','██║  ██║','██████╔╝','╚═════╝ ']};
+function banner(){
+ var w='AEXINIDE'.split(''),rows=[];
+ for(var r=0;r<6;r++)rows.push(w.map(function(c){return L[c][r];}).join(''));
+ rows.push('<i>'+'═'.repeat(56)+'</i>');
+ var d=document.createElement('div');d.className='art';out.appendChild(d);
+ return new Promise(function(res){var i=0;(function step(){d.innerHTML=rows.slice(0,i+1).join('\n');scr.scrollTop=scr.scrollHeight;i++;if(i<rows.length)setTimeout(step,reduced?0:110);else res();})();});
+}
+
+/* ---------- avatar ---------- */
+var AVATAR='avatar.jpg';
+function mountAvatars(root){(root||document).querySelectorAll('.ava:not([data-m])').forEach(function(el){el.setAttribute('data-m','1');el.textContent='A';var im=new Image();im.alt='aexinide';im.onload=function(){el.textContent='';el.appendChild(im);};im.src=AVATAR;});}
+mountAvatars();
+
+/* ---------- blog: plain HTML posts in blogs/<date-slug>/index.html, listed automatically via the GitHub API ---------- */
+var REPO='aexinide/aexinide.github.io',postsReady=false;
+var bi=document.getElementById('blog-in');
+function ghGet(url,key,ttl,tf){
+ var c=null;try{c=JSON.parse(localStorage.getItem(key)||'null');}catch(e){}
+ if(c&&Date.now()-c.t<ttl)return Promise.resolve(c.d);
+ return fetch(url,{headers:{Accept:'application/vnd.github+json'}}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){var d=tf?tf(j):j;try{localStorage.setItem(key,JSON.stringify({t:Date.now(),d:d}));}catch(e){}return d;}).catch(function(e){if(c)return c.d;throw e;});
+}
+function titleCase(t){return t.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});}
+function fmtDate(d){var a=d.split('-');return a.length===3?a[1]+'/'+a[2]+'/'+a[0]:d;}
+function blogList(){
+ var h='<h2 class="pt">Blog</h2><p class="sub">Below are some ramblings from me:</p>';
+ if(!postsReady)h+='<p class="sub">Loading posts…</p>';
+ else if(!POSTS.length)h+='<p class="sub">No posts yet.</p>';
+ else h+='<ul class="blist">'+POSTS.map(function(p){return '<li><span class="bd">'+esc(fmtDate(p.date))+'</span> - <a href="'+esc(p.url)+'">'+esc(p.title)+'</a></li>';}).join('')+'</ul>';
+ bi.innerHTML=h;
+}
+function loadPosts(){
+ var dirs={};
+ var a=ghGet('https://api.github.com/repos/'+REPO+'/contents/blogs','ax_blogdirs',900000,function(l){return l.filter(function(f){return f.type==='dir';}).map(function(f){return f.name;});}).then(function(l){l.forEach(function(d){dirs[d]=1;});}).catch(function(){});
+ var b=fetch('blogs/posts.json?v='+Date.now()).then(function(r){return r.ok?r.json():[];}).then(function(l){l.forEach(function(d){dirs[d]=1;});}).catch(function(){});
+ return Promise.all([a,b]).then(function(){
+  POSTS=Object.keys(dirs).map(function(d){var m=d.match(/^(\d{4}-\d{2}-\d{2})-?(.*)$/);return{slug:d,date:m?m[1]:'',title:titleCase(m?(m[2]||d):d),url:'/blogs/'+d+'/'};});
+  POSTS.sort(function(x,y){return x.date<y.date?1:x.date>y.date?-1:0;});
+  return Promise.all(POSTS.map(function(p){return fetch(p.url).then(function(r){return r.ok?r.text():'';}).then(function(t){var m=t.match(/<title>([^<]*)<\/title>/i);if(m){var n=m[1].replace(/\s*[—|-]\s*AEXINIDE.*$/i,'').trim();if(n)p.title=n;}}).catch(function(){});}));
+ }).then(function(){postsReady=true;blogList();});
+}
+blogList();
+
+/* ---------- virtual filesystem ---------- */
+var FS={'~':{items:['about.txt','contact.txt','projects']},'~/projects':{items:['edgevla-kernel','aerort-linux','q-circuit-ai']}};
+var FILES={
+ '~/about.txt':'No name, no face, just the work.\nI build at the edge of AI, robotics, Linux kernels and quantum systems.\nThe goal: push models closer to the metal with zero bloat.',
+ '~/contact.txt':'Username : <span class="w">@aexinide</span>\nEmail    : <a class="lnk" href="mailto:aexinide@gmail.com">aexinide@gmail.com</a>\nGitHub   : <a class="lnk" href="https://github.com/aexinide" target="_blank" rel="noopener">github.com/aexinide</a>\nMatrix   : <span class="w">@aexinide:matrix.org</span>\nPGP      : <span class="w">4F89 B2C1 90A3 77E2</span>\n<span class="d">Search @aexinide on any platform. Unsolicited recruiters go to /dev/null.</span>',
+ '~/projects/edgevla-kernel':'<span class="b w">EdgeVLA-Kernel v0.9.4</span>  <span class="d">[AI + ROBOTICS]</span>\nCUDA/C++ inference engine for Vision-Language-Action models on edge\nhardware such as Jetson AGX Orin. Action-chunking and a quantized vision\nbackbone cut latency by 60%.\n  - target    : bimanual robotic arms, AMRs\n  - latency   : &lt; 40 ms per step (25 Hz control loop)\n  - memory    : 4.2 GB VRAM',
+ '~/projects/aerort-linux':'<span class="a w">AeroRT-Linux patch</span>  <span class="d">[LINUX + AEROSPACE]</span>\nHard real-time scheduling patches for Linux, giving deterministic thread\nexecution in high-vibration, high-radiation satellite and drone payloads.\n  - preemption latency : &lt; 12 µs\n  - fault recovery     : integrated watchdog\n  - target             : ARM Cortex-R, RISC-V',
+ '~/projects/q-circuit-ai':'<span class="g w">Q-Circuit AI syndrome decoder</span>  <span class="d">[QUANTUM]</span>\nHybrid classical-quantum framework: lightweight graph neural networks\ndecode error syndromes in real time to stop decoherence cascades.\n  - framework : PyTorch / Qiskit bridge\n  - inference : sub-microsecond syndrome analysis\n  - scale     : tested up to 128 logical qubits'
+};
+var ALIAS={projects:'~/projects',edgevla:'~/projects/edgevla-kernel',aerort:'~/projects/aerort-linux',quantum:'~/projects/q-circuit-ai'};
+function resolve(p){
+ if(!p)return cwd;if(p==='~')return '~';
+ if(p==='..')return cwd==='~'?'~':(cwd.slice(0,cwd.lastIndexOf('/'))||'~');
+ if(p==='.')return cwd;
+ p=p.replace(/\/+$/,'');
+ if(p.indexOf('~')===0)return p;
+ return cwd+'/'+p;
+}
+
+/* ---------- commands ---------- */
+var C={};
+C.help=function(){
+ var rows=[['help','list commands'],['ls [dir]','list directory'],['cd &lt;dir&gt;','change directory'],['cat &lt;file&gt;','print a file'],['pwd','working directory'],
+ ['about, contact','read in terminal'],['projects','list projects'],['inspect &lt;name&gt;','edgevla, aerort, quantum'],['banner','show the AEXINIDE art'],
+ ['blog [number|slug]','list posts or read one'],['open &lt;view&gt;','switch window: home, projects, blog, archive, contact'],['gui','switch to the point-and-click view'],['archive','open the archive'],['github, email','links'],['neofetch','system info'],['su &lt;name&gt;','change your username (now: '+esc(user)+')'],['theme [name]','sky, green, amber, violet, rose'],['matrix [text]','rain of "aexinide" or your own text; any key exits'],['matrix digit','classic digital rain (0-9)'],['quote','a line from aexinide'],['fortune, uptime','small extras'],['Alt+1..5','switch window views'],['whoami, echo, history','the usual'],['date','UTC date and time'],['time','UTC time, and how far ahead or behind your device is'],['clear','clear screen (Ctrl+L)']];
+ print('<span class="a w">Available commands</span>   <span class="d">Tab completes, ↑/↓ browses history.</span>');
+ rows.forEach(function(r){var pad=r[0].replace(/&lt;|&gt;/g,'_');print('  <span class="w">'+r[0]+'</span>'+' '.repeat(Math.max(2,30-pad.length))+'<span class="d">'+r[1]+'</span>');});
+};
+C.about=function(){print(FILES['~/about.txt']);};
+C.contact=function(){print(FILES['~/contact.txt']);};
+C.quantum=function(){print(FILES['~/projects/q-circuit-ai']);};
+C.banner=function(){banner();};
+C.archive=function(){show('archive');};
+C.blog=function(a){
+ if(!postsReady){print('<span class="d">loading posts…</span>');return;}
+ if(!POSTS.length){print('<span class="d">no posts yet</span>');return;}
+ var k=(a[0]||'').toLowerCase();
+ if(!k){print('<span class="a w">Blog</span>');POSTS.forEach(function(p,i){print('  <span class="d">'+(i+1)+'.</span> <span class="d">'+esc(p.date)+'</span>  '+esc(p.title));});print('<span class="d">blog &lt;number&gt; for the link, "open blog" for the page.</span>');return;}
+ var p=POSTS.filter(function(x,i){return x.slug.toLowerCase()===k||String(i+1)===k;})[0];
+ if(!p){print('<span class="r">blog: no such post: '+esc(k)+'</span>');return;}
+ print('<span class="a w">'+esc(p.title)+'</span>  <span class="d">'+esc(p.date)+'</span>\n<a class="lnk" href="'+esc(p.url)+'">'+esc(location.origin+p.url)+'</a>');
+};
+C.projects=function(){
+ print('<span class="a w">Open-source projects</span>');
+ print('  <span class="b w">edgevla-kernel</span>   Vision-Language-Action runtime for robotic arms');
+ print('  <span class="a w">aerort-linux</span>     Real-time Linux patches for space-grade hardware');
+ print('  <span class="g w">q-circuit-ai</span>     Hybrid quantum error-correction decoder');
+ print('<span class="d">Run "inspect &lt;name&gt;" for details.</span>');
+};
+C.inspect=function(a){
+ var k=(a[0]||'').toLowerCase();
+ if(!k){print('<span class="r">usage: inspect &lt;edgevla|aerort|quantum&gt;</span>');return;}
+ var m=null;
+ Object.keys(ALIAS).forEach(function(n){if(k===n)m=ALIAS[n];});
+ Object.keys(FILES).forEach(function(f){if(f.indexOf('~/projects/')===0&&f.split('/').pop()===k)m=f;});
+ if(!m||!FILES[m]){print('<span class="r">inspect: no such project: '+esc(k)+'</span>');return;}
+ print(FILES[m]);
+};
+C.open=function(a){var v=(a[0]||'').toLowerCase();if(VIEWS.indexOf(v)<0&&v!=='terminal'){print('<span class="r">usage: open &lt;home|terminal|projects|blog|archive|contact&gt;</span>');return;}show(v);};
+C.gui=function(){show('home');};
+C.github=function(){print('GitHub: <a class="lnk" href="https://github.com/aexinide" target="_blank" rel="noopener">github.com/aexinide</a>');window.open('https://github.com/aexinide','_blank','noopener');};
+C.email=function(){print('<a class="lnk" href="mailto:aexinide@gmail.com">aexinide@gmail.com</a>');};
+C.pwd=function(){print(cwd==='~'?'/home/'+user:'/home/'+user+cwd.slice(1));};
+C.whoami=function(){print(user);};
+function npt(){return new Date().toLocaleString('en-GB',{timeZone:'UTC',weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false})+' UTC';}
+C.date=function(){print(npt());};
+C.time=function(){
+ var diff=0-(-new Date().getTimezoneOffset()),ab=Math.abs(diff),h=Math.floor(ab/60),m=ab%60,tz='your device';
+ try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||tz;}catch(e){}
+ print('UTC   : <span class="w">'+npt()+'</span> <span class="d">(UTC+00:00)</span>');
+ print('You   : <span class="w">'+new Date().toLocaleTimeString('en-GB',{hour12:false})+'</span> <span class="d">('+esc(tz)+')</span>');
+ print(diff===0?'<span class="g">UTC is on the same time as you.</span>':'UTC is <span class="a w">'+h+' hrs '+m+' min 0 sec '+(diff>0?'ahead of':'behind')+'</span> you.');
+};
+C.echo=function(a){print(esc(a.join(' ')));};
+C.history=function(){hist.forEach(function(h,i){print('<span class="d">'+String(i+1).padStart(4)+'</span>  '+esc(h));});};
+C.clear=function(){out.innerHTML='';};
+C.ls=function(a){
+ var p=resolve(a[0]);
+ if(FILES[p]){print(esc(a[0]));return;}
+ var d=FS[p];
+ if(!d){print('<span class="r">ls: cannot access \''+esc(a[0]||'')+'\': No such file or directory</span>');return;}
+ print(d.items.map(function(i){return FS[p+'/'+i]?'<span class="b w">'+i+'/</span>':i;}).join('   '));
+};
+C.cd=function(a){
+ var p=resolve(a[0]);
+ if(FILES[p]){print('<span class="r">cd: '+esc(a[0])+': Not a directory</span>');return;}
+ if(!FS[p]){print('<span class="r">cd: '+esc(a[0]||'')+': No such file or directory</span>');return;}
+ cwd=p;setPs();
+};
+C.cat=function(a){
+ if(!a[0]){print('<span class="r">usage: cat &lt;file&gt;</span>');return;}
+ var p=resolve(a[0]);
+ if(FS[p]){print('<span class="r">cat: '+esc(a[0])+': Is a directory</span>');return;}
+ if(!FILES[p]){print('<span class="r">cat: '+esc(a[0])+': No such file or directory</span>');return;}
+ print(FILES[p]);
+};
+C.neofetch=function(){
+ var art=['    ___   _  __','   /   | | |/ /','  / /| | |   / ',' / ___ |/   |  ','/_/  |_/_/|_|  '];
+ var info=['<b class="b">'+esc(user)+'</b>@<b class="b">'+esc(host)+'</b>','-----------------','<span class="a">OS</span>: AexOS 4.8 (hardened)','<span class="a">Kernel</span>: 6.x-aerort-rt','<span class="a">Shell</span>: bash 5.2','<span class="a">CPU</span>: core 99 1400K','<span class="a">RAM</span>: 128T  <span class="a">VRAM</span>: 64T','<span class="a">Storage</span>: ∞'];
+ for(var i=0;i<Math.max(art.length,info.length);i++)print('<span class="b">'+esc((art[i]||'').padEnd(18))+'</span>'+(info[i]||''));
+};
+C.sudo=function(){print('<span class="r">'+esc(user)+' is not in the sudoers file. This incident will be reported.</span>');};
+C.exit=function(){print('<span class="d">logout\nThere is nowhere to go. Type "help".</span>');};
+C.rm=function(){print('<span class="r">rm: read-only file system. Nice try.</span>');};
+C.su=function(a){
+ var n=(a[0]||'').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,16);
+ if(!n){print('<span class="r">usage: su &lt;name&gt;   (letters, numbers, - and _)</span>');return;}
+ user=n;setPs();print('now logged in as <span class="w">'+esc(n)+'</span>');
+};
+C.login=C.su;
+C.theme=function(a){
+ var n=(a[0]||'').toLowerCase();
+ if(!n){print('themes: '+Object.keys(THEMES).map(function(k){return '<span style="color:'+THEMES[k]+'">'+k+'</span>';}).join('  ')+'\n<span class="d">usage: theme &lt;name&gt;</span>');return;}
+ if(applyTheme(n))print('theme set to <span class="w">'+esc(n)+'</span>');else print('<span class="r">theme: unknown "'+esc(n)+'"</span>');
+};
+var FORT=['Latency is a feature request you forgot to file.','The best abstraction is the one the hardware never notices.','Every bug is a timing bug if you stare long enough.','Measure twice, patch the kernel once.','A 25 Hz loop does not care about your roadmap.','Zero bloat is a habit, not a milestone.'];
+C.fortune=function(){print('<span class="a">&gt;</span> '+FORT[Math.floor(Math.random()*FORT.length)]);};
+C.uptime=function(){var u=Math.floor((Date.now()-t0)/1000);print('up '+Math.floor(u/60)+' min, '+(u%60)+' s, 1 user, load average: 0.42, 0.37, 0.31');};
+var rainOn=false;
+C.matrix=function(a){
+ if(rainOn)return;
+ if(reduced){print('<span class="d">matrix: skipped (reduced motion is on)</span>');return;}
+ var word=a.join(' ').trim().slice(0,40),low=word.toLowerCase();
+ var digital=(low==='digit'||low==='digits'||low==='digital');
+ var chars=Array.from(digital?'0123456789':(word.replace(/\s+/g,'')||'aexinide'));
+ var cv=document.getElementById('rain'),pane=document.getElementById('termbody');
+ rainOn=true;cv.hidden=false;cv.width=pane.clientWidth;cv.height=pane.clientHeight;
+ var ctx=cv.getContext('2d'),sz=16,cols=Math.floor(cv.width/sz),dr=[],k;
+ for(k=0;k<cols;k++)dr[k]=Math.floor(Math.random()*-30);
+ var col=getComputedStyle(document.documentElement).getPropertyValue('--blue')||'#38bdf8';
+ var id=setInterval(function(){
+  ctx.fillStyle='rgba(2,5,10,.14)';ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.font='bold '+sz+'px monospace';
+  for(var j=0;j<cols;j++){
+   ctx.fillStyle=col;ctx.fillText(chars[Math.floor(Math.random()*chars.length)],j*sz,dr[j]*sz);
+   if(dr[j]*sz>cv.height&&Math.random()>.975)dr[j]=0;dr[j]++;
+  }
+ },55);
+ var armed,to;
+ function stop(){clearInterval(id);clearTimeout(to);clearTimeout(armed);cv.hidden=true;rainOn=false;document.removeEventListener('keydown',stop);cv.removeEventListener('click',stop);inp.focus({preventScroll:true});}
+ /* arm the exit listeners after the Enter keypress that started this has finished bubbling */
+ armed=setTimeout(function(){document.addEventListener('keydown',stop);cv.addEventListener('click',stop);},300);
+ to=setTimeout(stop,20000);
+ print('<span class="d">matrix: '+(digital?'digital rain':'raining "'+esc(word||'aexinide')+'"')+' - press any key or click to exit</span>');
+};
+var QUOTES=['The last invention will not be a machine that thinks. It will be the moment we stop caring whether it does.','We are not building tools anymore. We are drafting our own successors and calling it progress.','By 2050 no one will ask if the machine is conscious. They will ask why we needed to be.','Freedom is the first thing we will trade for convenience, and the last thing we will notice is missing.','Whoever owns intelligence owns the century. Whoever fears it owns nothing.','Truth will not die in the age of AI. It will become a luxury product.'];
+C.quote=function(){print('<span class="a">&gt;</span> "'+esc(QUOTES[Math.floor(Math.random()*QUOTES.length)])+'" <span class="a w">-aexinide</span>');};
+var NAMES=Object.keys(C);
+
+function run(line){
+ var raw=line.trim();
+ print(prompt()+' <span class="w">'+esc(line)+'</span>');
+ if(!raw)return;
+ if(hist[hist.length-1]!==raw){hist.push(raw);try{localStorage.setItem('ax_hist',JSON.stringify(hist.slice(-100)));}catch(e){}}
+ hi=hist.length;
+ var parts=raw.split(/\s+/),cmd=parts[0].toLowerCase();
+ if(Object.prototype.hasOwnProperty.call(C,cmd))C[cmd](parts.slice(1));
+ else print('<span class="r">bash: '+esc(parts[0])+': command not found</span>  <span class="d">(try "help")</span>');
+}
+function complete(){
+ var v=inp.value,parts=v.split(/\s+/),last=parts[parts.length-1],cands;
+ if(parts.length===1)cands=NAMES.filter(function(n){return n.indexOf(last.toLowerCase())===0;});
+ else{
+  var dir=last.indexOf('/')>-1?last.slice(0,last.lastIndexOf('/')+1):'',base=last.slice(dir.length),d=FS[dir?resolve(dir):cwd];
+  cands=d?d.items.filter(function(i){return i.indexOf(base)===0;}).map(function(i){return dir+i;}):[];
+ }
+ if(cands.length===1){parts[parts.length-1]=cands[0];inp.value=parts.join(' ')+(parts.length===1?' ':'');}
+ else if(cands.length>1){
+  print(prompt()+' <span class="w">'+esc(v)+'</span>');print(cands.map(esc).join('   '));
+  var p=cands[0];cands.forEach(function(c){while(c.indexOf(p)!==0)p=p.slice(0,-1);});
+  if(p.length>last.length){parts[parts.length-1]=p;inp.value=parts.join(' ');}
+ }
+}
+inp.addEventListener('keydown',function(e){
+ if(busy){e.preventDefault();return;}
+ if(e.key==='Enter'){var v=inp.value;inp.value='';run(v);}
+ else if(e.key==='ArrowUp'){e.preventDefault();if(hi>0){hi--;inp.value=hist[hi];}}
+ else if(e.key==='ArrowDown'){e.preventDefault();if(hi<hist.length-1){hi++;inp.value=hist[hi];}else{hi=hist.length;inp.value='';}}
+ else if(e.key==='Tab'){e.preventDefault();complete();}
+ else if(e.ctrlKey&&e.key.toLowerCase()==='l'){e.preventDefault();C.clear();}
+ else if(e.ctrlKey&&e.key.toLowerCase()==='c'){e.preventDefault();print(prompt()+' <span class="w">'+esc(inp.value)+'</span>^C');inp.value='';}
+});
+scr.addEventListener('click',function(){if(!window.getSelection().toString())inp.focus({preventScroll:true});});
+
+var t0=Date.now();
+function tick(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'UTC',hour12:false})+' UTC';var u=Math.floor((Date.now()-t0)/1000);document.getElementById('up').textContent=Math.floor(u/60)+'m '+String(u%60).padStart(2,'0')+'s';}
+setInterval(tick,1000);tick();
+setInterval(function(){document.getElementById('tmp').textContent=(36+Math.floor(Math.random()*5))+'°C';document.getElementById('lat').textContent=(7+Math.floor(Math.random()*5))+'ms';},2200);
+
+/* ---------- floating terminal (fixed, Esc or X closes) ---------- */
+var tw=document.getElementById('termwin');
+function openTerm(){tw.hidden=false;scr.scrollTop=scr.scrollHeight;inp.focus({preventScroll:true});}
+function closeTerm(){tw.hidden=true;}
+document.getElementById('termclose').addEventListener('click',closeTerm);
+tw.addEventListener('click',function(e){if(e.target===tw)closeTerm();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!tw.hidden&&!rainOn)closeTerm();});
+
+/* ---------- projects: every public GitHub repo, live (stars, open PRs, topics, description, last push) ---------- */
+var GH_ICON='<svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
+var LANGC={JavaScript:'#f1e05a',TypeScript:'#3178c6',Python:'#3572A5',Rust:'#dea584',C:'#555555','C++':'#f34b7d',Go:'#00ADD8',Shell:'#89e051',Nix:'#7e7eff',HTML:'#e34c26',CSS:'#563d7c',Java:'#b07219',Lua:'#51a0cf',Cuda:'#3A4E3A',Zig:'#ec915c'};
+var PCFG={user:'aexinide',exclude:[],hideForks:true,extra:[]};
+function ago(d){var sec=(Date.now()-new Date(d))/1000,u=[['year',31536000],['month',2592000],['day',86400],['hour',3600],['minute',60]];for(var i=0;i<u.length;i++){var n=Math.floor(sec/u[i][1]);if(n>=1)return 'Updated '+n+' '+u[i][0]+(n>1?'s':'')+' ago';}return 'Updated just now';}
+function langHtml(l){return l?'<i style="background:'+(LANGC[l]||'#8da0b4')+'"></i>'+esc(l):'';}
+function tagHtml(a){return a.map(function(t){return '<span>'+esc(t)+'</span>';}).join('');}
+function mapRepos(l){return l.map(function(r){return{name:r.name,url:r.html_url,description:r.description,language:r.language,tags:r.topics||[],stars:r.stargazers_count,pushed:r.pushed_at,demo:r.homepage,fork:r.fork};});}
+function mapPRs(j){var c={};(j.items||[]).forEach(function(i){var n=String(i.repository_url).split('/').pop();c[n]=(c[n]||0)+1;});return c;}
+function cardHtml(p,prs){
+ var st=(p.stars!=null?'<span title="stars">★ '+p.stars+'</span>':'')+(prs?'<span title="open pull requests">PR '+(prs[p.name]||0)+'</span>':'');
+ return '<div class="pcard"><div class="phd"><h3>'+esc(p.name)+'</h3><span class="pst">'+st+'</span></div><p class="pd">'+esc(p.description||'')+'</p><div class="ptags">'+tagHtml((p.tags||[]).slice(0,5))+'</div><div class="pft"><span class="pl">'+langHtml(p.language)+'</span><span class="pu">'+(p.pushed?ago(p.pushed):'')+'</span></div><div class="pact"><a class="btn" href="'+esc(p.url)+'" target="_blank" rel="noopener">'+GH_ICON+'Code</a>'+(/^https?:\/\//i.test(p.demo||'')?'<a class="btn" href="'+esc(p.demo)+'" target="_blank" rel="noopener">Live Demo</a>':'')+'</div></div>';
+}
+function renderProjects(repos,prs){
+ var g=document.getElementById('pgrid'),u=PCFG.user.toLowerCase(),ex=(PCFG.exclude||[]).map(function(x){return String(x).toLowerCase();});
+ var list=repos.filter(function(r){var n=r.name.toLowerCase();return !(PCFG.hideForks&&r.fork)&&n!==u&&n!==u+'.github.io'&&ex.indexOf(n)<0;});
+ list.sort(function(a,b){return (b.stars-a.stars)||(a.pushed<b.pushed?1:-1);});
+ list=list.concat(PCFG.extra||[]);
+ g.innerHTML=list.length?list.map(function(p){return cardHtml(p,prs);}).join(''):'<p class="sub">No public repositories yet. They show up here automatically.</p>';
+}
+function loadProjects(){
+ fetch('projects.json?v='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}).then(function(j){
+  if(j&&!Array.isArray(j))for(var k in j)PCFG[k]=j[k];
+  var u=PCFG.user;document.getElementById('pall').href='https://github.com/'+u+'?tab=repositories';
+  return Promise.all([ghGet('https://api.github.com/users/'+u+'/repos?per_page=100&sort=pushed','ax_repos_'+u,1800000,mapRepos),ghGet('https://api.github.com/search/issues?q=type:pr+state:open+user:'+u+'&per_page=100','ax_prs_'+u,1800000,mapPRs).catch(function(){return null;})]);
+ }).then(function(r){renderProjects(r[0],r[1]);}).catch(function(){document.getElementById('pgrid').innerHTML='<p class="sub">Could not reach GitHub right now. Use the button below.</p>';});
+}
+
+/* ---------- stars ---------- */
+var cvs=document.getElementById('stars'),sx=cvs.getContext('2d'),stars=[],sw=0,sh=0,mrx=-9999,mry=-9999;
+function sizeStars(){
+ var p=cvs.parentNode,w=p.clientWidth,h=p.clientHeight;if(!w||!h)return;
+ var dpr=Math.min(window.devicePixelRatio||1,2);sw=w;sh=h;
+ cvs.width=w*dpr;cvs.height=h*dpr;sx.setTransform(dpr,0,0,dpr,0,0);
+ var n=Math.min(170,Math.floor(w*h/8000));stars=[];
+ for(var i=0;i<n;i++){var x=Math.random()*w,y=Math.random()*h;stars.push({bx:x,by:y,x:x,y:y,vx:0,vy:0,r:Math.random()*1.4+.4,a:Math.random()*.6+.25,t:Math.random()*6.28,s:Math.random()*.02+.005});}
+ drawStars();
+}
+window.sizeStars=sizeStars;
+function drawStars(){
+ var rect=cvs.getBoundingClientRect(),px=mrx-rect.left,py=mry-rect.top,R=130;
+ sx.clearRect(0,0,sw,sh);sx.fillStyle='#dbeafe';
+ for(var i=0;i<stars.length;i++){
+  var s=stars[i];
+  if(!reduced){
+   var dx=s.x-px,dy=s.y-py,d=Math.sqrt(dx*dx+dy*dy);
+   if(d<R&&d>.1){var f=(1-d/R)*2.4;s.vx+=dx/d*f;s.vy+=dy/d*f;}
+   s.vx+=(s.bx-s.x)*.02;s.vy+=(s.by-s.y)*.02;s.vx*=.88;s.vy*=.88;s.x+=s.vx;s.y+=s.vy;s.t+=s.s;
+  }
+  sx.globalAlpha=s.a*(.65+.35*Math.sin(s.t));
+  sx.beginPath();sx.arc(s.x,s.y,s.r,0,6.283);sx.fill();
+ }
+ sx.globalAlpha=1;
+}
+window.addEventListener('mousemove',function(e){mrx=e.clientX;mry=e.clientY;});
+window.addEventListener('touchmove',function(e){var t=e.touches[0];if(t){mrx=t.clientX;mry=t.clientY;}},{passive:true});
+window.addEventListener('resize',sizeStars);
+(function loop(){requestAnimationFrame(loop);if(!reduced)drawStars();})();
+sizeStars();
+
+async function boot(){
+ busy=true;
+ print('<span class="d">[ 0.000] AexOS 4.8 secure node booting…</span>');await sleep(160);
+ print('<span class="d">[ 0.214]</span> modules: <span class="g">[ OK ]</span> ai-inference  <span class="g">[ OK ]</span> realtime-linux  <span class="g">[ OK ]</span> quantum-sim');await sleep(160);
+ await banner();
+ print('<span class="d">independent research: AI, embodied robotics, Linux kernels, quantum systems</span>');
+ print('Type <span class="a w">help</span> for commands, or use the tabs above for the point-and-click view.\n');
+ setPs();busy=false;if(view==='terminal')inp.focus({preventScroll:true});
+}
+mountAvatars();loadPosts();loadProjects();
+setPs();boot();
+show(viewFromPath(),true);
+if((location.hash||'')==='#terminal')openTerm();
+window.addEventListener('popstate',function(){show(viewFromPath(),true);});
+})();
+</script>
+<!-- real oneko cat: https://github.com/adryd325/oneko.js (MIT). To self-host, download oneko.js + oneko.gif next to index.html and use src="oneko.js" with no data-cat. -->
+<script src="oneko.js" data-cat="/oneko.gif"></script>
+</body>
+</html>

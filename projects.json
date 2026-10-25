@@ -1,38 +1,6 @@
 {
-  "all": "https://github.com/aexinide?tab=repositories",
-  "projects": [
-    {
-      "url": "https://github.com/aexinide",
-      "name": "EdgeVLA-Kernel",
-      "description": "Runtime for Vision-Language-Action models on edge hardware.",
-      "tags": [
-        "ai",
-        "robotics",
-        "cuda"
-      ],
-      "language": "C++"
-    },
-    {
-      "url": "https://github.com/aexinide",
-      "name": "AeroRT-Linux",
-      "description": "Hard real-time scheduling patches for satellites and drones.",
-      "tags": [
-        "linux",
-        "real-time",
-        "aerospace"
-      ],
-      "language": "C"
-    },
-    {
-      "url": "https://github.com/aexinide",
-      "name": "Q-Circuit AI",
-      "description": "Graph neural network decoder for quantum error correction.",
-      "tags": [
-        "quantum",
-        "pytorch",
-        "qiskit"
-      ],
-      "language": "Python"
-    }
-  ]
+  "user": "aexinide",
+  "hideForks": false,
+  "exclude": [],
+  "extra": []
 }
