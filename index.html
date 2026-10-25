@@ -35,7 +35,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://aexinide.is-a.dev/#website","url":"https://aexinide.is-a.dev/","name":"AEXINIDE","alternateName":["aexinide","@aexinide"],"description":"AEXINIDE (@aexinide) is an online alias building at the edge of AI, robotics, Linux kernels and quantum systems. Projects, blog and archive.","inLanguage":"en","publisher":{"@id":"https://aexinide.is-a.dev/#person"}},{"@type":"ProfilePage","@id":"https://aexinide.is-a.dev/#profile","url":"https://aexinide.is-a.dev/","name":"AEXINIDE | AI, Robotics, Linux & Quantum","isPartOf":{"@id":"https://aexinide.is-a.dev/#website"},"mainEntity":{"@id":"https://aexinide.is-a.dev/#person"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://aexinide.is-a.dev/og-image.png","width":1200,"height":630}},{"@type":"Person","@id":"https://aexinide.is-a.dev/#person","name":"AEXINIDE","alternateName":["aexinide","@aexinide"],"url":"https://aexinide.is-a.dev/","image":"https://aexinide.is-a.dev/avatar.jpg","description":"AEXINIDE (@aexinide) is an online alias building at the edge of AI, robotics, Linux kernels and quantum systems. Projects, blog and archive.","knowsAbout":["Artificial intelligence","Embodied AI","Robotics","Vision-Language-Action models","Linux kernel","Real-time systems","Quantum computing","Quantum error correction"],"sameAs":["https://github.com/aexinide","https://gitlab.com/aexinide","https://huggingface.co/aexinide","https://www.kaggle.com/aexinide","https://dev.to/aexinide","https://medium.com/@aexinide","https://leetcode.com/u/aexinide/","https://bsky.app/profile/aexinide.bsky.social","https://x.com/aexinide","https://www.instagram.com/aexinide/","https://www.tiktok.com/@aexinide","https://www.threads.com/@aexinide","https://www.youtube.com/@aexinide","https://t.me/aexinide","https://www.reddit.com/user/aexinide","https://www.pinterest.com/aexinide/","https://www.snapchat.com/@aexinide","https://matrix.to/#/@aexinide:matrix.org"]}]}</script>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@700;900&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Unbounded:wght@800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
  --desk:#0a1018;--bar:#0f1923;--line:#1b2735;--dim:#66778a;--blue:#38bdf8;--amber:#f59e0b;--green:#34d399;--red:#f87171;--tbg:#02050a;--tfg:#c9d6e2;
@@ -58,12 +58,11 @@ body{display:flex;flex-direction:column;font-family:'JetBrains Mono','Fira Code'
 .tab.gh{color:var(--amber)}
 .pane{flex:1;min-height:0;display:flex;flex-direction:column}
 /* terminal view */
-#v-terminal{background:var(--tbg)}
 #screen{flex:1;min-height:0;overflow-y:auto;padding:14px 16px;cursor:text;word-break:break-word}
 #screen::-webkit-scrollbar{width:8px}#screen::-webkit-scrollbar-thumb{background:var(--line)}
 pre{margin:0;font:inherit;white-space:pre-wrap}
 .row{min-height:1.5em}
-.art{white-space:pre;line-height:1;font-weight:400;font-size:min(14px,calc((100vw - 64px)/34));color:var(--blue);margin:6px 0 4px}
+.art{white-space:pre;line-height:1;font-weight:400;font-size:min(12px,calc((100vw - 64px)/34));color:var(--blue);margin:6px 0 4px}
 .art i{font-style:normal;color:var(--amber)}
 .p{color:var(--green);white-space:nowrap}.p b{color:var(--blue)}
 .b{color:var(--blue)}.a{color:var(--amber)}.g{color:var(--green)}.r{color:var(--red)}.d{color:var(--dim)}.w{color:#fff;font-weight:700}
@@ -98,7 +97,6 @@ pre{margin:0;font:inherit;white-space:pre-wrap}
 .crow .btn{margin-left:auto;padding:5px 12px}
 .big{font-size:clamp(28px,6vw,44px);font-weight:700;letter-spacing:-.02em;color:var(--gacc);margin:0 0 6px}
 
-#v-terminal{position:relative}
 #rain{position:absolute;inset:0;width:100%;height:100%;z-index:3;background:#02050a;cursor:pointer}
 .row{animation:rowin .18s ease-out}
 @keyframes rowin{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
@@ -188,17 +186,52 @@ pre{margin:0;font:inherit;white-space:pre-wrap}
 .gui.enter .prow:nth-child(3){animation-delay:.18s}
 @media (max-width:640px){.prow{flex-direction:column;align-items:flex-start}}
 
-/* ---------- home ---------- */
-#v-home{position:relative;overflow:hidden;padding:0}
+/* ---------- stage + boxes ---------- */
+.stage{flex:1;min-height:0;position:relative;display:flex;flex-direction:column;background:var(--gbg)}
 #stars{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.hscroll{position:absolute;inset:0;overflow-y:auto;display:flex;padding:clamp(14px,3vw,32px);z-index:1}
-.hbox{width:100%;max-width:860px;margin:auto;padding:clamp(22px,5vw,44px) clamp(18px,5vw,48px);text-align:center;display:flex;flex-direction:column;align-items:center;background:rgba(8,14,22,.74);border:1px solid var(--gline);border-radius:22px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.pane.gui{position:relative;z-index:1;background:transparent;padding:clamp(14px,3vw,32px)}
+.gui .in,.hbox{width:100%;max-width:860px;margin:auto;padding:clamp(20px,4vw,40px);background:rgba(8,14,22,.74);border:1px solid var(--gline);border-radius:22px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+#v-projects .in,#v-blog .in,#v-archive .in{max-width:980px}
+#v-about .in{padding-bottom:clamp(20px,4vw,40px)}
+/* home */
+.hbox{text-align:center;display:flex;flex-direction:column;align-items:center}
 .ava.hero{width:168px;height:168px;font-size:64px;margin:0 0 18px;border-width:3px;box-shadow:0 0 0 6px rgba(56,189,248,.08),0 0 40px rgba(56,189,248,.25)}
-.gui .hname{font-family:'Orbitron','Sora',sans-serif;font-weight:900;font-size:clamp(34px,9vw,68px);line-height:1.1;letter-spacing:.14em;padding-left:.14em;margin:0 0 6px;background:linear-gradient(90deg,var(--gacc),#a78bfa,var(--gamb));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(56,189,248,.25))}
+.gui .hname{font-family:'Unbounded','Sora',sans-serif;font-weight:800;font-size:clamp(26px,7.2vw,58px);line-height:1.15;letter-spacing:.06em;padding-left:.06em;margin:0 0 6px;background:linear-gradient(90deg,var(--gacc),#a78bfa,var(--gamb));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(56,189,248,.25))}
 .gui .htxt{max-width:60ch;margin:12px auto 0;font-size:15.5px;line-height:1.8;color:var(--gmut)}
 .gui .htxt b{color:var(--gtx);font-weight:600}
 .hbox .btns{justify-content:center;margin-top:26px}
 .gui.enter .hbox{animation:rise .6s ease-out both}
+/* terminal window */
+.termwin{position:fixed;right:24px;bottom:24px;width:min(560px,calc(100vw - 16px));height:min(340px,55vh);min-width:260px;min-height:160px;z-index:100;display:flex;flex-direction:column;background:var(--tbg);border:1px solid var(--line);border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.65);overflow:hidden;resize:both}
+.termbar{flex:none;display:flex;align-items:center;gap:7px;padding:7px 10px;background:var(--bar);border-bottom:1px solid var(--line);cursor:grab;touch-action:none;user-select:none;font-size:11px}
+.termbar .dot{width:10px;height:10px}
+.termttl{color:var(--dim);margin-left:6px}
+.termbody{flex:1;min-height:0;position:relative;display:flex;flex-direction:column}
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:22px}
+.pcard{background:var(--gcard);border:1px solid var(--gline);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-3px);border-color:var(--gacc);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.phd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.phd h3{margin:0;font-size:17px;word-break:break-word}
+.pst{font-size:12px;color:var(--gmut);white-space:nowrap}
+.pd{margin:0;font-size:13.5px;max-width:none}
+.ptags{display:flex;flex-wrap:wrap;gap:6px}
+.ptags span{padding:2px 10px;border-radius:99px;font-size:11.5px;color:var(--gacc);border:1px solid var(--gline);background:rgba(56,189,248,.06)}
+.pft{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid var(--gline);font-size:12px;color:var(--gmut)}
+.pl i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.pact{display:flex;gap:8px;flex-wrap:wrap}
+.pd:empty,.ptags:empty,.pst:empty{display:none}
+.btn svg{vertical-align:-3px;margin-right:6px}
+.pall{display:flex;justify-content:center;margin-top:26px}
+.btn.pill{border-radius:99px;padding:12px 26px}
+.gui.enter .pcard{animation:rise .5s ease-out both}
+/* contact icons */
+.amp{display:flex;align-items:center;gap:14px;color:var(--gmut);margin:24px 0 18px}
+.amp::before,.amp::after{content:"";flex:1;height:1px;background:var(--gline)}
+.soc{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.si{position:relative;width:42px;height:42px;border:1px solid var(--gline);border-radius:12px;background:var(--gcard);color:var(--gmut);transition:transform .2s,color .2s,border-color .2s}
+.si::before{content:"";position:absolute;inset:10px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+.si:hover,.si:focus-visible{color:var(--gacc);border-color:var(--gacc);transform:translateY(-2px);outline:0}
 
 /* ---------- archive ---------- */
 .soon{display:inline-block;align-self:flex-start;padding:0 8px;border:1px solid var(--gline);border-radius:99px;font-size:11px;color:var(--gamb)}
@@ -241,55 +274,41 @@ a.post{text-decoration:none}
     <span class="dot" style="background:#ef4444"></span><span class="dot" style="background:#f59e0b"></span><span class="dot" style="background:#10b981"></span>
     <span class="ava xs" data-view="home" style="cursor:pointer" title="home"></span><span class="ttl" id="ttl" data-view="home" style="cursor:pointer">aexinide@world: ~</span>
     <div class="tabs" role="tablist">
-      <button class="tab" role="tab" id="tab-terminal" data-view="terminal">terminal</button>
       <button class="tab" role="tab" id="tab-about" data-view="about">about</button>
       <button class="tab" role="tab" id="tab-projects" data-view="projects">projects</button>
       <button class="tab" role="tab" id="tab-blog" data-view="blog">blog</button>
       <button class="tab" role="tab" id="tab-archive" data-view="archive">archive</button>
       <button class="tab" role="tab" id="tab-contact" data-view="contact">contact</button>
-      <a class="tab gh" href="https://github.com/aexinide" target="_blank" rel="noopener">github</a>
     </div>
   </div>
 
-  <section class="pane gui" id="v-home"><canvas id="stars"></canvas><div class="hscroll"><div class="hbox">
+  <div class="stage"><canvas id="stars"></canvas>
+  <section class="pane gui" id="v-home"><div class="hbox">
     <span class="ava hero"></span>
     <h1 class="hname">AEXINIDE</h1>
     <p class="htxt">AEXINIDE is just an online name. The person behind it stays out of the picture, so all that is left is the work. I am a <b>computer science student</b> currently in my <b>third year</b>, and I love building things <b>close to the metal</b>: AI, robotics, Linux kernels and quantum systems. I learn by shipping open-source projects, breaking things, and writing down what I find.</p>
     <p class="htxt">Right now I am exploring how to make models run faster on small hardware, how real-time schedulers behave under load, and how error correction might scale. When I am not coding I read papers, tinker with my Linux setup, and collect things from the internet that I like.</p>
-    <p class="htxt">This site is my corner of the internet: projects, notes, and an archive of things I love. Look around, or open the terminal if you want to explore the old-fashioned way.</p>
+    <p class="htxt">This site is my corner of the internet: projects, notes, and an archive of things I love. Want the hacker experience? Click <a class="lnk" href="#terminal" data-view="terminal">terminal</a> and a little window opens right here that you can drag around.</p>
     <div class="btns">
       <a class="btn pri" href="#projects" data-view="projects">Projects</a>
       <a class="btn" href="#about" data-view="about">About me</a>
       <a class="btn" href="#archive" data-view="archive">Archive</a>
-      <a class="btn" href="#terminal" data-view="terminal">Terminal</a>
       <a class="btn" href="https://github.com/aexinide" target="_blank" rel="noopener">GitHub</a>
     </div>
-  </div></div></section>
+  </div></section>
 
-  <section class="pane" id="v-terminal" hidden>
-    <canvas id="rain" hidden></canvas>
-    <div id="screen" role="log" aria-live="polite">
-      <div id="out"></div>
-      <div class="line"><span class="p" id="ps"></span><input id="in" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="terminal input"></div>
-    </div>
-  </section>
-
-  <section class="pane gui" id="v-about" hidden><div class="in abt"><div class="txt">
+    <section class="pane gui" id="v-about" hidden><div class="in abt"><div class="txt">
     <h2 class="pt">Systems that run at the speed of the machine they control.</h2>
     <p>Exploring the boundaries of intelligence and computation. I build at the edge of AI, robotics, Linux kernels and quantum systems.</p>
     <div class="tags"><span class="tag">AI architectures</span><span class="tag">Embodied robotics</span><span class="tag">Linux kernels</span><span class="tag">Quantum systems</span></div>
-    <blockquote>When robots fail, it is not because the transformer lacks parameters; it is because the latency between cognition and actuation is choked by unoptimized software.<small>The Silicon-Muscle Gap, from the manifesto</small></blockquote>
-    <div class="btns"><button class="btn pri" data-view="projects">See projects</button><button class="btn" data-run="manifesto">Read manifesto in terminal</button></div>
+    <div class="btns"><button class="btn pri" data-view="projects">See projects</button></div>
   </div><span class="ava xl"></span></div></section>
 
   <section class="pane gui" id="v-projects" hidden><div class="in">
     <h2 class="pt">Projects</h2>
-    <p>Open-source work on getting models closer to the hardware.</p>
-    <div class="plist">
-    <div class="prow" style="--c:var(--gacc)"><div class="pi"><div class="meta">AI + robotics · v0.9.4</div><h3>EdgeVLA-Kernel</h3><p>Runtime for Vision-Language-Action models on edge hardware.</p><div class="pspec">25 Hz control loop · under 40 ms per step · 4.2 GB VRAM</div></div><div class="btns"><a class="btn pri" href="https://github.com/aexinide" target="_blank" rel="noopener">Code</a><button class="btn" data-run="inspect edgevla">Terminal</button></div></div>
-    <div class="prow" style="--c:var(--gamb)"><div class="pi"><div class="meta">Linux + aerospace</div><h3>AeroRT-Linux</h3><p>Hard real-time scheduling patches for satellites and drones.</p><div class="pspec">Preemption under 12 µs · watchdog recovery · ARM Cortex-R, RISC-V</div></div><div class="btns"><a class="btn pri" href="https://github.com/aexinide" target="_blank" rel="noopener">Code</a><button class="btn" data-run="inspect aerort">Terminal</button></div></div>
-    <div class="prow" style="--c:var(--ggrn)"><div class="pi"><div class="meta">Quantum compute</div><h3>Q-Circuit AI</h3><p>Graph neural network decoder for quantum error correction.</p><div class="pspec">Sub-microsecond decoding · PyTorch / Qiskit bridge · up to 128 logical qubits</div></div><div class="btns"><a class="btn pri" href="https://github.com/aexinide" target="_blank" rel="noopener">Code</a><button class="btn" data-run="inspect quantum">Terminal</button></div></div>
-    </div>
+    <p>A collection of my open-source projects and experiments.</p>
+    <div class="pgrid" id="pgrid"></div>
+    <div class="pall"><a class="btn pill" id="pall" href="https://github.com/aexinide?tab=repositories" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View all repositories on GitHub</a></div>
   </div></section>
 
   <section class="pane gui" id="v-blog" hidden><div class="in" id="blog-in"></div></section>
@@ -311,10 +330,24 @@ a.post{text-decoration:none}
     <span class="ava md"></span>
     <h2 class="pt">Find me as</h2>
     <div class="big">@aexinide</div>
-    <div class="crow"><span>Email</span><div class="cv">aexinide@gmail.com</div><a class="btn pri" href="mailto:aexinide@gmail.com">Write</a></div>
-    <div class="crow"><span>GitHub</span><div class="cv">github.com/aexinide</div><a class="btn" href="https://github.com/aexinide" target="_blank" rel="noopener">Open</a></div>
-    <div class="crow"><span>Matrix</span><div class="cv">@aexinide:matrix.org</div><button class="btn" id="copy">Copy username</button></div>
+    <div class="crow"><span>Email</span><div class="cv">aexinide@gmail.com</div></div>
+    <div class="crow"><span>GitHub</span><div class="cv">github.com/aexinide</div></div>
+    <div class="crow"><span>Matrix</span><div class="cv">@aexinide:matrix.org</div></div>
+    <div class="amp">&amp;</div>
+    <div class="soc"><!-- Discord: replace YOUR_DISCORD_ID with your numeric Discord user id --><a class="si" href="https://github.com/aexinide" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/github.svg)"></a><a class="si" href="https://discord.com/users/YOUR_DISCORD_ID" target="_blank" rel="me noopener" aria-label="Discord" title="Discord" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/discord.svg)"></a><a class="si" href="https://gitlab.com/aexinide" target="_blank" rel="me noopener" aria-label="GitLab" title="GitLab" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/gitlab.svg)"></a><a class="si" href="https://codeberg.org/aexinide" target="_blank" rel="me noopener" aria-label="Codeberg" title="Codeberg" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/codeberg.svg)"></a><a class="si" href="https://huggingface.co/aexinide" target="_blank" rel="me noopener" aria-label="Hugging Face" title="Hugging Face" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/huggingface.svg)"></a><a class="si" href="https://www.kaggle.com/aexinide" target="_blank" rel="me noopener" aria-label="Kaggle" title="Kaggle" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/kaggle.svg)"></a><a class="si" href="https://dev.to/aexinide" target="_blank" rel="me noopener" aria-label="DEV" title="DEV" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/devdotto.svg)"></a><a class="si" href="https://medium.com/@aexinide" target="_blank" rel="me noopener" aria-label="Medium" title="Medium" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/medium.svg)"></a><a class="si" href="https://hashnode.com/@aexinide" target="_blank" rel="me noopener" aria-label="Hashnode" title="Hashnode" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/hashnode.svg)"></a><a class="si" href="https://leetcode.com/u/aexinide/" target="_blank" rel="me noopener" aria-label="LeetCode" title="LeetCode" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/leetcode.svg)"></a><a class="si" href="https://codepen.io/aexinide" target="_blank" rel="me noopener" aria-label="CodePen" title="CodePen" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/codepen.svg)"></a><a class="si" href="https://bsky.app/profile/aexinide.bsky.social" target="_blank" rel="me noopener" aria-label="Bluesky" title="Bluesky" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/bluesky.svg)"></a><a class="si" href="https://mastodon.social/@aexinide" target="_blank" rel="me noopener" aria-label="Mastodon" title="Mastodon" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/mastodon.svg)"></a><a class="si" href="https://x.com/aexinide" target="_blank" rel="me noopener" aria-label="X" title="X" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/x.svg)"></a><a class="si" href="https://www.reddit.com/user/aexinide" target="_blank" rel="me noopener" aria-label="Reddit" title="Reddit" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/reddit.svg)"></a><a class="si" href="https://www.threads.com/@aexinide" target="_blank" rel="me noopener" aria-label="Threads" title="Threads" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/threads.svg)"></a><a class="si" href="https://www.instagram.com/aexinide/" target="_blank" rel="me noopener" aria-label="Instagram" title="Instagram" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/instagram.svg)"></a><a class="si" href="https://www.tiktok.com/@aexinide" target="_blank" rel="me noopener" aria-label="TikTok" title="TikTok" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/tiktok.svg)"></a><a class="si" href="https://www.youtube.com/@aexinide" target="_blank" rel="me noopener" aria-label="YouTube" title="YouTube" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/youtube.svg)"></a><a class="si" href="https://www.twitch.tv/aexinide" target="_blank" rel="me noopener" aria-label="Twitch" title="Twitch" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/twitch.svg)"></a><a class="si" href="https://t.me/aexinide" target="_blank" rel="me noopener" aria-label="Telegram" title="Telegram" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/telegram.svg)"></a><a class="si" href="https://matrix.to/#/@aexinide:matrix.org" target="_blank" rel="me noopener" aria-label="Matrix" title="Matrix" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/matrix.svg)"></a><a class="si" href="https://www.pinterest.com/aexinide/" target="_blank" rel="me noopener" aria-label="Pinterest" title="Pinterest" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/pinterest.svg)"></a><a class="si" href="https://www.snapchat.com/@aexinide" target="_blank" rel="me noopener" aria-label="Snapchat" title="Snapchat" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/snapchat.svg)"></a><a class="si" href="https://ko-fi.com/aexinide" target="_blank" rel="me noopener" aria-label="Ko-fi" title="Ko-fi" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13/icons/kofi.svg)"></a></div>
   </div></section>
+  </div>
+</div>
+
+<div class="termwin" id="termwin" hidden>
+  <div class="termbar" id="termbar"><span class="dot" id="termclose" style="background:#ef4444;cursor:pointer" title="close"></span><span class="dot" style="background:#f59e0b"></span><span class="dot" style="background:#10b981"></span><span class="termttl">aexinide / terminal</span></div>
+  <div class="termbody" id="termbody">
+    <canvas id="rain" hidden></canvas>
+    <div id="screen" role="log" aria-live="polite">
+      <div id="out"></div>
+      <div class="line"><span class="p" id="ps"></span><input id="in" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="terminal input"></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -336,19 +369,19 @@ function print(h){var d=document.createElement('pre');d.className='row';d.innerH
 function sleep(ms){return new Promise(function(r){setTimeout(r,ms);});}
 
 /* ---------- window: one frame, swappable views ---------- */
-var VIEWS=['home','terminal','about','projects','blog','archive','contact'];
+var VIEWS=['home','about','projects','blog','archive','contact'];
 var TITLES={home:'AEXINIDE | AI, Robotics, Linux & Quantum',terminal:'Terminal — AEXINIDE',about:'About — AEXINIDE',projects:'Projects — AEXINIDE',blog:'Blog — AEXINIDE',archive:'Archive — AEXINIDE',contact:'Contact — AEXINIDE'};
 function show(v){
+ if(v==='terminal'){openTerm();return;}
  view=v;
  VIEWS.forEach(function(n){
   document.getElementById('v-'+n).hidden=(n!==v);
   var t=document.getElementById('tab-'+n);if(t){t.classList.toggle('on',n===v);t.setAttribute('aria-selected',n===v);}
  });
  var pn=document.getElementById('v-'+v);pn.classList.remove('enter');void pn.offsetWidth;pn.classList.add('enter');
- ttl.textContent=v==='home'?'aexinide@world: ~':'aexinide / '+v;if(v==='home'&&window.sizeStars)sizeStars();
+ ttl.textContent=v==='home'?'aexinide@world: ~':'aexinide / '+v;
  document.title=TITLES[v]||TITLES.home;
  try{history.replaceState(null,'',v==='home'?location.pathname+location.search:'#'+v);}catch(e){}
- if(v==='terminal'){scr.scrollTop=scr.scrollHeight;inp.focus({preventScroll:true});}
 }
 document.addEventListener('click',function(e){
  var el=e.target.closest('[data-view],[data-run],[data-post],[data-blog]');if(!el)return;
@@ -357,9 +390,7 @@ document.addEventListener('click',function(e){
  if(el.dataset.view){if(el.tagName==='A')e.preventDefault();show(el.dataset.view);}
  if(el.dataset.run){show('terminal');if(!busy)run(el.dataset.run);}
 });
-document.addEventListener('keydown',function(e){if(e.altKey&&e.key>='1'&&e.key<='7'){e.preventDefault();show(VIEWS[+e.key-1]);}});
-var cp=document.getElementById('copy');
-cp.addEventListener('click',function(){try{navigator.clipboard.writeText('aexinide').then(function(){cp.textContent='Copied';});}catch(e){cp.textContent='aexinide';}});
+document.addEventListener('keydown',function(e){if(e.altKey&&e.key>='1'&&e.key<='6'){e.preventDefault();show(VIEWS[+e.key-1]);}});
 
 /* ---------- banner ---------- */
 var L={
@@ -449,10 +480,9 @@ function loadPosts(){
 blogList();
 
 /* ---------- virtual filesystem ---------- */
-var FS={'~':{items:['about.txt','manifesto.txt','contact.txt','projects']},'~/projects':{items:['edgevla-kernel','aerort-linux','q-circuit-ai']}};
+var FS={'~':{items:['about.txt','contact.txt','projects']},'~/projects':{items:['edgevla-kernel','aerort-linux','q-circuit-ai']}};
 var FILES={
  '~/about.txt':'No name, no face, just the work.\nI build at the edge of AI, robotics, Linux kernels and quantum systems.\nThe goal: push models closer to the metal with zero bloat.',
- '~/manifesto.txt':'<span class="a w">THE SILICON-MUSCLE GAP</span>\n\nMost AI researchers live in the cloud. They treat physical robotics as an\nafterthought API call. When robots fail, it is not because the transformer\nlacks parameters; it is because the latency between silicon cognition and\nphysical actuation is choked by unoptimized software stacks.\n\nAexinide builds the bridge: bare-metal inference, asynchronous token\nstreaming, and flawless physics integration.',
  '~/contact.txt':'Username : <span class="w">@aexinide</span>\nEmail    : <a class="lnk" href="mailto:aexinide@gmail.com">aexinide@gmail.com</a>\nGitHub   : <a class="lnk" href="https://github.com/aexinide" target="_blank" rel="noopener">github.com/aexinide</a>\nMatrix   : <span class="w">@aexinide:matrix.org</span>\nPGP      : <span class="w">4F89 B2C1 90A3 77E2</span>\n<span class="d">Search @aexinide on any platform. Unsolicited recruiters go to /dev/null.</span>',
  '~/projects/edgevla-kernel':'<span class="b w">EdgeVLA-Kernel v0.9.4</span>  <span class="d">[AI + ROBOTICS]</span>\nCUDA/C++ inference engine for Vision-Language-Action models on edge\nhardware such as Jetson AGX Orin. Action-chunking and a quantized vision\nbackbone cut latency by 60%.\n  - target    : bimanual robotic arms, AMRs\n  - latency   : &lt; 40 ms per step (25 Hz control loop)\n  - memory    : 4.2 GB VRAM',
  '~/projects/aerort-linux':'<span class="a w">AeroRT-Linux patch</span>  <span class="d">[LINUX + AEROSPACE]</span>\nHard real-time scheduling patches for Linux, giving deterministic thread\nexecution in high-vibration, high-radiation satellite and drone payloads.\n  - preemption latency : &lt; 12 µs\n  - fault recovery     : integrated watchdog\n  - target             : ARM Cortex-R, RISC-V',
@@ -478,13 +508,12 @@ function resolve(p){
 var C={};
 C.help=function(){
  var rows=[['help','list commands'],['ls [dir]','list directory'],['cd &lt;dir&gt;','change directory'],['cat &lt;file&gt;','print a file'],['pwd','working directory'],
- ['about, manifesto, contact','read in terminal'],['projects','list projects'],['inspect &lt;name&gt;','edgevla, aerort, quantum'],['banner','show the AEXINIDE art'],
- ['blog [number|slug]','list posts or read one'],['open &lt;view&gt;','switch window: home, about, projects, blog, archive, contact'],['gui','switch to the point-and-click view'],['archive','open the archive'],['github, email','links'],['neofetch','system info'],['su &lt;name&gt;','change your username (now: '+esc(user)+')'],['theme [name]','sky, green, amber, violet, rose'],['matrix [text]','rain of "aexinide" or your own text; any key exits'],['matrix digit','classic digital rain (0-9)'],['quote','a line from aexinide'],['fortune, uptime','small extras'],['Alt+1..7','switch window views'],['whoami, echo, history','the usual'],['date','UTC date and time'],['time','UTC time, and how far ahead or behind your device is'],['clear','clear screen (Ctrl+L)']];
+ ['about, contact','read in terminal'],['projects','list projects'],['inspect &lt;name&gt;','edgevla, aerort, quantum'],['banner','show the AEXINIDE art'],
+ ['blog [number|slug]','list posts or read one'],['open &lt;view&gt;','switch window: home, about, projects, blog, archive, contact'],['gui','switch to the point-and-click view'],['archive','open the archive'],['github, email','links'],['neofetch','system info'],['su &lt;name&gt;','change your username (now: '+esc(user)+')'],['theme [name]','sky, green, amber, violet, rose'],['matrix [text]','rain of "aexinide" or your own text; any key exits'],['matrix digit','classic digital rain (0-9)'],['quote','a line from aexinide'],['fortune, uptime','small extras'],['Alt+1..6','switch window views'],['whoami, echo, history','the usual'],['date','UTC date and time'],['time','UTC time, and how far ahead or behind your device is'],['clear','clear screen (Ctrl+L)']];
  print('<span class="a w">Available commands</span>   <span class="d">Tab completes, ↑/↓ browses history.</span>');
  rows.forEach(function(r){var pad=r[0].replace(/&lt;|&gt;/g,'_');print('  <span class="w">'+r[0]+'</span>'+' '.repeat(Math.max(2,30-pad.length))+'<span class="d">'+r[1]+'</span>');});
 };
 C.about=function(){print(FILES['~/about.txt']);};
-C.manifesto=function(){print(FILES['~/manifesto.txt']);};
 C.contact=function(){print(FILES['~/contact.txt']);};
 C.quantum=function(){print(FILES['~/projects/q-circuit-ai']);};
 C.banner=function(){banner();};
@@ -518,7 +547,7 @@ C.inspect=function(a){
  if(!m||!FILES[m]){print('<span class="r">inspect: no such project: '+esc(k)+'</span>');return;}
  print(FILES[m]);
 };
-C.open=function(a){var v=(a[0]||'').toLowerCase();if(VIEWS.indexOf(v)<0){print('<span class="r">usage: open &lt;home|terminal|about|projects|blog|archive|contact&gt;</span>');return;}show(v);};
+C.open=function(a){var v=(a[0]||'').toLowerCase();if(VIEWS.indexOf(v)<0&&v!=='terminal'){print('<span class="r">usage: open &lt;home|terminal|about|projects|blog|archive|contact&gt;</span>');return;}show(v);};
 C.gui=function(){show('about');};
 C.github=function(){print('GitHub: <a class="lnk" href="https://github.com/aexinide" target="_blank" rel="noopener">github.com/aexinide</a>');window.open('https://github.com/aexinide','_blank','noopener');};
 C.email=function(){print('<a class="lnk" href="mailto:aexinide@gmail.com">aexinide@gmail.com</a>');};
@@ -585,7 +614,7 @@ C.matrix=function(a){
  var word=a.join(' ').trim().slice(0,40),low=word.toLowerCase();
  var digital=(low==='digit'||low==='digits'||low==='digital');
  var chars=Array.from(digital?'0123456789':(word.replace(/\s+/g,'')||'aexinide'));
- var cv=document.getElementById('rain'),pane=document.getElementById('v-terminal');
+ var cv=document.getElementById('rain'),pane=document.getElementById('termbody');
  rainOn=true;cv.hidden=false;cv.width=pane.clientWidth;cv.height=pane.clientHeight;
  var ctx=cv.getContext('2d'),sz=16,cols=Math.floor(cv.width/sz),dr=[],k;
  for(k=0;k<cols;k++)dr[k]=Math.floor(Math.random()*-30);
@@ -649,7 +678,65 @@ function tick(){document.getElementById('clock').textContent=new Date().toLocale
 setInterval(tick,1000);tick();
 setInterval(function(){document.getElementById('tmp').textContent=(36+Math.floor(Math.random()*5))+'°C';document.getElementById('lat').textContent=(7+Math.floor(Math.random()*5))+'ms';},2200);
 
-/* ---------- stars + cat ---------- */
+/* ---------- floating terminal ---------- */
+var tw=document.getElementById('termwin'),tbar=document.getElementById('termbar');
+function openTerm(){
+ tw.hidden=false;
+ if(!tw.dataset.p){var r=tw.getBoundingClientRect();tw.style.left=Math.max(8,innerWidth-r.width-24)+'px';tw.style.top=Math.max(8,innerHeight-r.height-24)+'px';tw.style.right='auto';tw.style.bottom='auto';tw.dataset.p='1';}
+ scr.scrollTop=scr.scrollHeight;inp.focus({preventScroll:true});
+}
+document.getElementById('termclose').addEventListener('click',function(){tw.hidden=true;});
+(function(){
+ var dx=0,dy=0,drag=false;
+ tbar.addEventListener('pointerdown',function(e){if(e.target.id==='termclose')return;drag=true;var r=tw.getBoundingClientRect();dx=e.clientX-r.left;dy=e.clientY-r.top;try{tbar.setPointerCapture(e.pointerId);}catch(x){}});
+ tbar.addEventListener('pointermove',function(e){if(!drag)return;tw.style.left=Math.min(Math.max(0,e.clientX-dx),innerWidth-80)+'px';tw.style.top=Math.min(Math.max(0,e.clientY-dy),innerHeight-40)+'px';});
+ function up(){drag=false;}
+ tbar.addEventListener('pointerup',up);tbar.addEventListener('pointercancel',up);
+})();
+
+/* ---------- projects: reads projects.json, enriches GitHub repos live ---------- */
+var GH_ICON='<svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
+var LANGC={JavaScript:'#f1e05a',TypeScript:'#3178c6',Python:'#3572A5',Rust:'#dea584',C:'#555555','C++':'#f34b7d',Go:'#00ADD8',Shell:'#89e051',Nix:'#7e7eff',HTML:'#e34c26',CSS:'#563d7c',Java:'#b07219',Lua:'#51a0cf',Cuda:'#3A4E3A',Zig:'#ec915c'};
+var DEF_PROJECTS=[{url:'https://github.com/aexinide',name:'EdgeVLA-Kernel',description:'Runtime for Vision-Language-Action models on edge hardware.',tags:['ai','robotics','cuda'],language:'C++'},{url:'https://github.com/aexinide',name:'AeroRT-Linux',description:'Hard real-time scheduling patches for satellites and drones.',tags:['linux','real-time','aerospace'],language:'C'},{url:'https://github.com/aexinide',name:'Q-Circuit AI',description:'Graph neural network decoder for quantum error correction.',tags:['quantum','pytorch','qiskit'],language:'Python'}];
+function repoOf(u){var m=String(u).match(/github\.com\/([^\/\s?#]+)\/([^\/\s?#]+)/i);return m?{o:m[1],r:m[2].replace(/\.git$/,'')}:null;}
+function ago(d){var sec=(Date.now()-new Date(d))/1000,u=[['year',31536000],['month',2592000],['day',86400],['hour',3600],['minute',60]];for(var i=0;i<u.length;i++){var n=Math.floor(sec/u[i][1]);if(n>=1)return 'Updated '+n+' '+u[i][0]+(n>1?'s':'')+' ago';}return 'Updated just now';}
+function langHtml(l){return l?'<i style="background:'+(LANGC[l]||'#8da0b4')+'"></i>'+esc(l):'';}
+function tagHtml(a){return a.map(function(t){return '<span>'+esc(t)+'</span>';}).join('');}
+function normProj(x){var p=typeof x==='string'?{url:x}:x,r=repoOf(p.url||'');p.name=p.name||(r?r.r:String(p.url||'project').replace(/\/+$/,'').split('/').pop());p.tags=p.tags||[];return p;}
+function cardHtml(p){
+ return '<div class="pcard"><div class="phd"><h3>'+esc(p.name)+'</h3><span class="pst">'+(p.stars!=null?'★ '+p.stars+(p.forks!=null?'  ⑂ '+p.forks:''):'')+'</span></div><p class="pd">'+esc(p.description||'')+'</p><div class="ptags">'+tagHtml(p.tags)+'</div><div class="pft"><span class="pl">'+langHtml(p.language)+'</span><span class="pu">'+esc(p.updated||'')+'</span></div><div class="pact"><a class="btn" href="'+esc(p.url||'#')+'" target="_blank" rel="noopener">'+GH_ICON+'Code</a>'+(p.demo?'<a class="btn" href="'+esc(p.demo)+'" target="_blank" rel="noopener">Live Demo</a>':'')+'</div></div>';
+}
+function applyRepo(card,p,d){
+ card.querySelector('.pst').textContent='★ '+d.s+'  ⑂ '+d.f;
+ if(!p.description&&d.d)card.querySelector('.pd').textContent=d.d;
+ if(!p.tags.length&&d.t&&d.t.length)card.querySelector('.ptags').innerHTML=tagHtml(d.t.slice(0,4));
+ if(!p.language&&d.l)card.querySelector('.pl').innerHTML=langHtml(d.l);
+ if(!p.updated&&d.p)card.querySelector('.pu').textContent=ago(d.p);
+ if(!p.demo&&/^https?:\/\//i.test(d.h||'')){var a=document.createElement('a');a.className='btn';a.target='_blank';a.rel='noopener';a.href=d.h;a.textContent='Live Demo';card.querySelector('.pact').appendChild(a);}
+}
+function enrich(card,p,r){
+ var key='ax_gh_'+r.o+'/'+r.r,c=null;
+ try{c=JSON.parse(localStorage.getItem(key)||'null');}catch(e){}
+ var go=(c&&Date.now()-c.t<3600000)?Promise.resolve(c.d):fetch('https://api.github.com/repos/'+r.o+'/'+r.r).then(function(x){if(!x.ok)throw 0;return x.json();}).then(function(j){
+  var d={s:j.stargazers_count,f:j.forks_count,d:j.description,l:j.language,t:j.topics,p:j.pushed_at,h:j.homepage};
+  try{localStorage.setItem(key,JSON.stringify({t:Date.now(),d:d}));}catch(e){}
+  return d;});
+ go.then(function(d){applyRepo(card,p,d);}).catch(function(){});
+}
+function renderProjects(list,all){
+ var g=document.getElementById('pgrid');list=list.map(normProj);
+ g.innerHTML=list.length?list.map(cardHtml).join(''):'<p>No projects yet.</p>';
+ if(all)document.getElementById('pall').href=all;
+ var cards=g.querySelectorAll('.pcard');
+ list.forEach(function(p,i){var r=repoOf(p.url||'');if(r&&cards[i])enrich(cards[i],p,r);});
+}
+function loadProjects(){
+ fetch('projects.json?v='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){
+  var a=Array.isArray(j)?j:(j.projects||[]);renderProjects(a,Array.isArray(j)?null:j.all);
+ }).catch(function(){renderProjects(DEF_PROJECTS);});
+}
+
+/* ---------- stars ---------- */
 var cvs=document.getElementById('stars'),sx=cvs.getContext('2d'),stars=[],sw=0,sh=0,mrx=-9999,mry=-9999;
 function sizeStars(){
  var p=cvs.parentNode,w=p.clientWidth,h=p.clientHeight;if(!w||!h)return;
@@ -678,7 +765,7 @@ function drawStars(){
 window.addEventListener('mousemove',function(e){mrx=e.clientX;mry=e.clientY;});
 window.addEventListener('touchmove',function(e){var t=e.touches[0];if(t){mrx=t.clientX;mry=t.clientY;}},{passive:true});
 window.addEventListener('resize',sizeStars);
-(function loop(){requestAnimationFrame(loop);if(view==='home'&&!reduced)drawStars();})();
+(function loop(){requestAnimationFrame(loop);if(!reduced)drawStars();})();
 sizeStars();
 
 async function boot(){
@@ -690,11 +777,12 @@ async function boot(){
  print('Type <span class="a w">help</span> for commands, or use the tabs above for the point-and-click view.\n');
  setPs();busy=false;if(view==='terminal')inp.focus({preventScroll:true});
 }
-mountAvatars();loadPosts();
+mountAvatars();loadPosts();loadProjects();
 setPs();boot();
-var h0=(location.hash||'').slice(1);if(VIEWS.indexOf(h0)>0)show(h0);
+var h0=(location.hash||'').slice(1);if(VIEWS.indexOf(h0)>0||h0==='terminal')show(h0);
 })();
 </script>
-<script src="oneko.js"></script>
+<!-- real oneko cat: https://github.com/adryd325/oneko.js (MIT). To self-host, download oneko.js + oneko.gif next to index.html and use src="oneko.js" with no data-cat. -->
+<script src="https://cdn.jsdelivr.net/gh/adryd325/oneko.js@main/oneko.js" data-cat="https://cdn.jsdelivr.net/gh/adryd325/oneko.js@main/oneko.gif"></script>
 </body>
 </html>
