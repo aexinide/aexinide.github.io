@@ -509,7 +509,7 @@ function sleep(ms){return new Promise(function(r){setTimeout(r,ms);});}
 /* ---------- window: one frame, swappable views ---------- */
 var VIEWS=['home','projects','blog','archive','contact'];
 var SITE='https://aexinide.is-a.dev',PATH={home:'/',projects:'/projects/',blog:'/blogs/',archive:'/archive/',contact:'/contact/'};
-function viewFromPath(){var q=(location.pathname.split('/').filter(Boolean)[0]||'').replace(/\.html$/,'');return {projects:'projects',blogs:'blog',blog:'blog',archive:'archive',contact:'contact'}[q]||'home';}
+function viewFromPath(){var q=(location.pathname.split('/').filter(Boolean)[0]||'').replace(/\.html$/,'');return {projects:'projects',blogs:'blog',archive:'archive',contact:'contact'}[q]||'home';}
 var TITLES={home:'AEXINIDE | AI, Robotics, Linux & Quantum',terminal:'Terminal — AEXINIDE',projects:'Projects — AEXINIDE',blog:'Blog — AEXINIDE',archive:'Archive — AEXINIDE',contact:'Contact — AEXINIDE'};
 function show(v,np){
  if(v==='terminal'){openTerm();return;}
