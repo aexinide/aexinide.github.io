@@ -315,6 +315,61 @@ a.post{text-decoration:none}
   }
 }
 
+/* ---------- archive v2 ---------- */
+.asec{margin:0 0 54px}
+.asec:last-child{margin-bottom:0}
+.asec h3.at{font-family:'Dancing Script','Sora',cursive;font-weight:700;font-size:clamp(30px,5vw,42px);line-height:1.1;color:var(--gacc);margin:0 0 4px}
+.asec .asub{margin:0 0 20px;color:var(--gmut);font-size:14px;max-width:none}
+.asec .empty{font-size:13px;color:var(--gamb)}
+ 
+/* tiny copy button */
+.cp{flex:none;font:inherit;font-size:11px;line-height:1;padding:4px 7px;border:1px solid var(--gline);border-radius:6px;background:transparent;color:var(--gmut);cursor:pointer;transition:color .15s,border-color .15s}
+.cp:hover,.cp:focus-visible{color:var(--gacc);border-color:var(--gacc);outline:0}
+.cp.ok{color:var(--ggrn);border-color:var(--ggrn)}
+ 
+/* quotes */
+.qlist{display:flex;flex-direction:column;gap:10px}
+.qitem{display:flex;align-items:flex-start;gap:12px;background:var(--gcard);border:1px solid var(--gline);border-left:3px solid var(--gacc);border-radius:10px;padding:12px 14px}
+.qitem .qb{flex:1;min-width:0}
+.qitem .qtx{color:var(--gtx);font-size:14.5px;line-height:1.6}
+.qitem .qau{display:block;margin-top:4px;text-align:right;font-size:12.5px;color:var(--gamb)}
+ 
+/* gifs */
+.gifgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.gifgrid img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--gline);border-radius:10px;background:var(--gcard)}
+ 
+/* styles */
+.stgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.stcard{background:var(--gcard);border:1px solid var(--gline);border-radius:12px;padding:14px 16px;overflow:hidden}
+.stcard .sample{font-size:26px;line-height:1.2;color:var(--gtx);margin-bottom:6px;word-break:break-word}
+.stcard .nm{font-size:13px;color:var(--gacc);font-weight:600}
+.stcard .ds{font-size:12.5px;color:var(--gmut)}
+.stcard img{width:100%;border-radius:8px;margin-bottom:8px;display:block}
+ 
+/* pixel buttons (88x31 wall) */
+.btnwall{display:grid;grid-template-columns:repeat(auto-fill,88px);gap:2px;justify-content:center;padding:10px 0;border-top:1px solid var(--gline);border-bottom:1px solid var(--gline)}
+.btnwall a,.btnwall span{display:block;line-height:0}
+.btnwall img{width:88px;height:31px;display:block;image-rendering:pixelated}
+@media (max-width:640px){
+ .btnwall{grid-template-columns:repeat(4,1fr);gap:3px}
+ .btnwall img{width:100%;height:auto;aspect-ratio:88/31}
+}
+ 
+/* emoji */
+.emgrid{display:flex;flex-wrap:wrap;gap:8px}
+.em{font:inherit;font-size:28px;line-height:1;width:52px;height:52px;border:1px solid var(--gline);border-radius:12px;background:var(--gcard);cursor:pointer;transition:transform .15s,border-color .15s}
+.em:hover,.em:focus-visible{transform:translateY(-2px);border-color:var(--gacc);outline:0}
+.em.ok{border-color:var(--ggrn)}
+ 
+/* colors */
+.clgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.cl{background:var(--gcard);border:1px solid var(--gline);border-radius:12px;overflow:hidden}
+.cl .sw{height:64px}
+.cl .ci{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px}
+.cl .cn{font-size:12px;color:var(--gmut);display:block}
+.cl .hx{font-size:13px;color:var(--gtx);font-family:'JetBrains Mono',monospace;text-transform:uppercase}
+
+
 </style>
 </head>
 <body>
@@ -365,7 +420,7 @@ a.post{text-decoration:none}
 
   <section class="pane gui" id="v-blog" hidden><div class="in" id="blog-in"></div></section>
 
-  <section class="pane gui" id="v-archive" hidden><div class="in">
+  <!-- <section class="pane gui" id="v-archive" hidden><div class="in">
     <h2 class="pt">Archive</h2>
     <p class="sub">A collection of things from the internet that I love: quotes, GIFs, styles, buttons, emoji, colors and more. Work in progress.</p>
     <div class="cards">
@@ -376,7 +431,19 @@ a.post{text-decoration:none}
       <div class="card" style="border-left-color:var(--gamb)"><span class="ico">😎</span><h3>Emoji</h3><div class="k">The ones I actually use.</div><span class="soon">soon</span></div>
       <div class="card" style="border-left-color:var(--ggrn)"><span class="ico">🎨</span><h3>Colors</h3><div class="k">Palettes I keep coming back to.</div><span class="soon">soon</span></div>
     </div>
-  </div></section>
+  </div></section> -->
+  <!-- ===================== 2) HTML ===================== -->
+<section class="pane gui" id="v-archive" hidden><div class="in">
+  <h2 class="pt">Archive</h2>
+  <p class="sub">A collection of things from the internet that I love. Work in progress.</p>
+ 
+  <div class="asec"><h3 class="at">Quotes</h3><p class="asub">Lines worth keeping.</p><div class="qlist" id="a-quotes"></div></div>
+  <div class="asec"><h3 class="at">GIFs</h3><p class="asub">Loops that live rent free.</p><div class="gifgrid" id="a-gifs"></div></div>
+  <div class="asec"><h3 class="at">Styles</h3><p class="asub">Fonts, layouts, vibes.</p><div class="stgrid" id="a-styles"></div></div>
+  <div class="asec"><h3 class="at">Pixel Buttons</h3><p class="asub">88×31 buttons I admire.</p><div class="btnwall" id="a-buttons"></div></div>
+  <div class="asec"><h3 class="at">Emoji</h3><p class="asub">The ones I actually use.</p><div class="emgrid" id="a-emoji"></div></div>
+  <div class="asec"><h3 class="at">Colors</h3><p class="asub">Palettes I keep coming back to.</p><div class="clgrid" id="a-colors"></div></div>
+</div></section>
 
   <section class="pane gui" id="v-contact" hidden><div class="in">
     <span class="ava md"></span>
@@ -512,7 +579,7 @@ function loadPosts(){
  return Promise.all([a,b]).then(function(){
   POSTS=Object.keys(dirs).map(function(d){var m=d.match(/^(\d{4}-\d{2}-\d{2})-?(.*)$/);return{slug:d,date:m?m[1]:'',title:titleCase(m?(m[2]||d):d),url:'/blogs/'+d+'/'};});
   POSTS.sort(function(x,y){return x.date<y.date?1:x.date>y.date?-1:0;});
-  return Promise.all(POSTS.map(function(p){return fetch(p.url).then(function(r){return r.ok?r.text():'';}).then(function(t){var m=t.match(/<title>([^<]*)<\/title>/i);if(m){var n=m[1].replace(/\s*[—|-]\s*AEXINIDE.*$/i,'').trim();if(n)p.title=n;}}).catch(function(){});}));
+  return Promise.all(POSTS.map(function(p){return fetch(p.url,{cache:'no-store'}).then(function(r){return r.ok?r.text():'';}).then(function(t){var m=t.match(/<title>([^<]*)<\/title>/i);if(m){var raw=m[1].trim();if(raw!==TITLES.home){var n=raw.replace(/\s*[—|-]\s*AEXINIDE.*$/i,'').trim();if(n)p.title=n;}}}).catch(function(){});}));
  }).then(function(){postsReady=true;blogList();});
 }
 blogList();
@@ -789,6 +856,82 @@ show(viewFromPath(),true);
 if((location.hash||'')==='#terminal')openTerm();
 window.addEventListener('popstate',function(){show(viewFromPath(),true);});
 })();
+</script>
+
+<script>
+
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  /* ---------- archive: edit these arrays to add stuff ---------- */
+var A_QUOTES=[
+ {t:'Freedom is the first thing we will trade for convenience, and the last thing we will notice is missing.',a:'aexinide'},
+ {t:'Whoever owns intelligence owns the century. Whoever fears it owns nothing.',a:'aexinide'},
+ {t:'Truth will not die in the age of AI. It will become a luxury product.',a:'aexinide'}
+];
+/* put files in assets/gifs/ and list them here */
+var A_GIFS=[
+ // 'assets/gifs/one.gif',
+];
+/* n = name, d = description, f = css font-family for the sample (optional), img = screenshot (optional) */
+var A_STYLES=[
+ {n:'JetBrains Mono',d:'Terminal vibes.',f:"'JetBrains Mono',monospace"},
+ {n:'Sora',d:'Clean geometric sans.',f:"'Sora',sans-serif"},
+ {n:'Dancing Script',d:'Soft handwritten headings.',f:"'Dancing Script',cursive"}
+];
+/* 88x31 buttons: string path, or {src,href,alt} to make it a link. Put files in assets/buttons/ */
+var A_BUTTONS=[
+  'assets/aexinide-88x31.gif',
+ // {src:'assets/buttons/nixos.gif',href:'https://nixos.org',alt:'NixOS'},
+ {src:'assets/aexinide-88x31.gif',href:'https://aexinide.is-a.dev/',alt:'aexinide'},
+ {src:'assets/buttons/rahul.gif',href:'https://RAHUL-PORTFOLIO-URL',alt:'Rahul'},
+ {src:'https://cyber.dabamos.de/88x31/archlinux.gif',href:'https://archlinux.org',alt:'Arch Linux'},
+ {src:'https://cyber.dabamos.de/88x31/7zip.gif',href:'https://www.7-zip.org',alt:'7-Zip'},
+ {src:'https://cyber.dabamos.de/88x31/apache-powered.gif',href:'https://httpd.apache.org',alt:'Apache'},
+ {src:'https://cyber.dabamos.de/88x31/bitwarden.gif',href:'https://bitwarden.com',alt:'Bitwarden'},
+ {src:'https://cyber.dabamos.de/88x31/blender.gif',href:'https://www.blender.org',alt:'Blender'},
+ {src:'https://cyber.dabamos.de/88x31/brave.gif',href:'https://brave.com',alt:'Brave'},
+ {src:'https://cyber.dabamos.de/88x31/chrome.gif',href:'https://www.google.com/chrome/',alt:'Chrome'},
+ {src:'https://cyber.dabamos.de/88x31/coreboot.gif',href:'https://coreboot.org',alt:'coreboot'},
+ {src:'https://cyber.dabamos.de/88x31/cssvalid.gif',href:'https://jigsaw.w3.org/css-validator/',alt:'CSS Validator'},
+ {src:'https://cyber.dabamos.de/88x31/agplv3-88x31.gif',href:'https://www.gnu.org/licenses/agpl-3.0.html',alt:'AGPLv3'},
+ {src:'https://cyber.dabamos.de/88x31/amiga.gif',href:'https://en.wikipedia.org/wiki/Amiga',alt:'Amiga'},
+ {src:'https://cyber.dabamos.de/88x31/atari.gif',href:'https://en.wikipedia.org/wiki/Atari',alt:'Atari'},
+ {src:'https://cyber.dabamos.de/88x31/chill_pill.gif',href:'https://cyber.dabamos.de/88x31/',alt:'Chill pill'}
+];
+var A_EMOJI=['😎','🔥','💀','🫡','🧠','⚡','🛰️','🤖','🐧','✨','🫠','🙏'];
+var A_COLORS=[
+ {n:'Sky',h:'#38bdf8'},{n:'Amber',h:'#f59e0b'},{n:'Green',h:'#34d399'},{n:'Violet',h:'#a78bfa'},
+ {n:'Rose',h:'#fb7185'},{n:'Desk',h:'#0a1018'},{n:'Card',h:'#0a121b'},{n:'Text',h:'#e3ecf5'}
+];
+ 
+var CPY='⧉';
+function copyText(s,btn){
+ function done(){if(!btn)return;var o=btn.textContent;btn.classList.add('ok');btn.textContent='✓';setTimeout(function(){btn.classList.remove('ok');btn.textContent=o;},1100);}
+ function fb(){var t=document.createElement('textarea');t.value=s;t.style.cssText='position:fixed;opacity:0';document.body.appendChild(t);t.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(t);done();}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(s).then(done,fb);else fb();
+}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-copy]');if(b)copyText(b.getAttribute('data-copy'),b);});
+ 
+function renderArchive(){
+ var $=function(i){return document.getElementById(i);},none='<p class="empty">Coming soon.</p>';
+ $('a-quotes').innerHTML=A_QUOTES.length?A_QUOTES.map(function(q){
+  return '<div class="qitem"><div class="qb"><span class="qtx">“'+esc(q.t)+'”</span><span class="qau">- '+esc(q.a)+'</span></div><button class="cp" aria-label="Copy quote" title="Copy" data-copy="'+esc('“'+q.t+'” - '+q.a)+'">'+CPY+'</button></div>';
+ }).join(''):none;
+ $('a-gifs').innerHTML=A_GIFS.length?A_GIFS.map(function(g){return '<img src="'+esc(g)+'" alt="" loading="lazy">';}).join(''):none;
+ $('a-styles').innerHTML=A_STYLES.length?A_STYLES.map(function(s){
+  return '<div class="stcard">'+(s.img?'<img src="'+esc(s.img)+'" alt="'+esc(s.n)+'" loading="lazy">':'')+(s.f?'<div class="sample" style="font-family:'+esc(s.f)+'">Aa Bb 0123</div>':'')+'<div class="nm">'+esc(s.n)+'</div><div class="ds">'+esc(s.d||'')+'</div></div>';
+ }).join(''):none;
+ $('a-buttons').innerHTML=A_BUTTONS.length?A_BUTTONS.map(function(b){
+  if(typeof b==='string')b={src:b};
+  var im='<img src="'+esc(b.src)+'" alt="'+esc(b.alt||'88x31 button')+'" width="88" height="31" loading="lazy">';
+  return b.href?'<a href="'+esc(b.href)+'" target="_blank" rel="noopener">'+im+'</a>':'<span>'+im+'</span>';
+ }).join(''):none;
+ $('a-emoji').innerHTML=A_EMOJI.map(function(m){return '<button class="em" data-copy="'+esc(m)+'" aria-label="Copy '+esc(m)+'" title="Copy">'+m+'</button>';}).join('');
+ $('a-colors').innerHTML=A_COLORS.map(function(c){
+  return '<div class="cl"><div class="sw" style="background:'+esc(c.h)+'"></div><div class="ci"><div><span class="cn">'+esc(c.n)+'</span><span class="hx">'+esc(c.h)+'</span></div><button class="cp" aria-label="Copy '+esc(c.h)+'" title="Copy hex" data-copy="'+esc(c.h)+'">'+CPY+'</button></div></div>';
+ }).join('');
+}
+/* then change your init line to:  renderArchive();mountAvatars();loadPosts();loadProjects(); */
+renderArchive();
 </script>
 <!-- real oneko cat: https://github.com/adryd325/oneko.js (MIT). To self-host, download oneko.js + oneko.gif next to index.html and use src="oneko.js" with no data-cat. -->
 <script src="oneko.js" data-cat="/oneko.gif"></script>
