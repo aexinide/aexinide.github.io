@@ -347,29 +347,25 @@ a.post{text-decoration:none}
 .stcard img{width:100%;border-radius:8px;margin-bottom:8px;display:block}
  
 /* pixel buttons (88x31 wall) */
-.btnwall{display:grid;grid-template-columns:repeat(auto-fill,88px);gap:2px;justify-content:center;padding:10px 0;border-top:1px solid var(--gline);border-bottom:1px solid var(--gline)}
-.btnwall a,.btnwall span{display:block;line-height:0}
+.btnwall{display:grid;grid-template-columns:repeat(auto-fill,88px);gap:8px;justify-content:center;padding:18px 0;border-top:1px solid var(--gline);border-bottom:1px solid var(--gline)}
+.btnwall a,.btnwall span{display:block;line-height:0;transition:transform .15s,filter .15s}
+.btnwall a:hover,.btnwall a:focus-visible{transform:translateY(-2px);filter:brightness(1.15);outline:0}
 .btnwall img{width:88px;height:31px;display:block;image-rendering:pixelated}
 @media (max-width:640px){
- .btnwall{grid-template-columns:repeat(4,1fr);gap:3px}
- .btnwall img{width:100%;height:auto;aspect-ratio:88/31}
+ .btnwall{grid-template-columns:repeat(auto-fill,minmax(88px,1fr));justify-items:center}
 }
 /* pixel button invite + embed snippet */
-.button-invite{margin-top:18px;padding:18px;background:var(--gcard);border:1px solid var(--gline);border-radius:12px}
-.button-invite p{margin:0 0 12px;font-size:13.5px;max-width:none}
-.button-invite p:last-of-type{margin-bottom:12px}
-.button-invite a{color:var(--gacc);text-decoration:underline;text-underline-offset:3px}
+.button-invite{margin-top:22px;padding:18px;background:var(--gcard);border:1px solid var(--gline);border-radius:12px}
+.button-invite p{margin:0;font-size:13.5px;max-width:none}
+.bi-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.bi-head a{line-height:0;flex:none;text-decoration:none}
+.bi-foot{margin-top:14px!important}
+.button-invite p a{color:var(--gacc);text-decoration:underline;text-underline-offset:3px}
 .embed-code{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:12px;background:#02050a;border:1px solid var(--gline);border-radius:8px}
 .embed-code pre{flex:1;min-width:0;margin:0;overflow-x:auto;white-space:pre;font-size:12px;line-height:1.7;color:var(--gtx)}
 .embed-code code{font-family:'JetBrains Mono',monospace}
 .embed-code .cp{white-space:nowrap;padding:7px 10px}
 @media (max-width:520px){.embed-code{flex-direction:column}}
- 
-/* emoji */
-.emgrid{display:flex;flex-wrap:wrap;gap:8px}
-.em{font:inherit;font-size:28px;line-height:1;width:52px;height:52px;border:1px solid var(--gline);border-radius:12px;background:var(--gcard);cursor:pointer;transition:transform .15s,border-color .15s}
-.em:hover,.em:focus-visible{transform:translateY(-2px);border-color:var(--gacc);outline:0}
-.em.ok{border-color:var(--ggrn)}
  
 /* colors */
 .clgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
@@ -405,7 +401,7 @@ a.post{text-decoration:none}
   <section class="pane gui" id="v-home"><div class="hbox">
     <span class="ava hero"></span>
     <h1 class="hname">AEXINIDE</h1>
-    <p class="htxt">AEXINIDE (pronounce as aik-sih-nide) is just an online name. The person behind it stays out of the picture, so all that is left is the work. I am a <b>computer science student</b> currently in my <b>third year</b>, and I love building things <b>close to the metal</b>: AI, robotics, Linux kernels and quantum systems. I learn by shipping open-source projects, breaking things, and writing down what I find.</p>
+    <p class="htxt">AEXINIDE is just an online name. The person behind it stays out of the picture, so all that is left is the work. I am a <b>computer science student</b> currently in my <b>third year</b>, and I love building things <b>close to the metal</b>: AI, robotics, Linux kernels and quantum systems. I learn by shipping open-source projects, breaking things, and writing down what I find.</p>
     <p class="htxt">Right now I am exploring how to make models run faster on small hardware, how real-time schedulers behave under load, and how error correction might scale. When I am not coding I read papers, tinker with my Linux setup, and collect things from the internet that I like.</p>
     <p class="htxt">This site is my corner of the internet: projects, blog, and an archive of things I love. Want the hacker experience? Click <a class="lnk" href="/#terminal" data-view="terminal">terminal</a> and a terminal popup opens. </p>
     <!-- <div class="btns">
@@ -438,43 +434,35 @@ a.post{text-decoration:none}
   <div class="asec"><h3 class="at">Quotes</h3><p class="asub">Lines worth keeping.</p><div class="qlist" id="a-quotes"></div></div>
   <div class="asec"><h3 class="at">GIFs</h3><p class="asub">Loops that live rent free.</p><div class="gifgrid" id="a-gifs"></div></div>
   <div class="asec"><h3 class="at">Styles</h3><p class="asub">Fonts, layouts, vibes.</p><div class="stgrid" id="a-styles"></div></div>
-  <!-- <div class="asec"><h3 class="at">Pixel Buttons</h3><p class="asub">88×31 buttons I admire.</p><div class="btnwall" id="a-buttons"></div></div> -->
 
   <div class="asec">
-  <h3 class="at">Pixel Buttons</h3>
-  <p class="asub">88×31 buttons I admire.</p>
+    <h3 class="at">Pixel Buttons</h3>
+    <p class="asub">88×31 buttons I admire.</p>
 
-  <div class="btnwall" id="a-buttons"></div>
+    <div class="btnwall" id="a-buttons"></div>
 
-  <div class="button-invite">
+    <div class="button-invite">
+      <div class="bi-head">
+        <a href="https://aexinide.is-a.dev/" target="_blank" rel="noopener noreferrer"><img src="assets/aexinide-88x31.gif" alt="@aexinide" width="88" height="31" style="image-rendering:pixelated"></a>
+        <p>Want to add me to your website? Copy the snippet below.</p>
+      </div>
 
-    <p>Want to add me to your website? <br>
-      <a href="https://aexinide.is-a.dev/" target="_blank" rel="noopener noreferrer"><img src="https://aexinide.is-a.dev/assets/aexinide-88x31.gif" alt="@aexinide" width="88" height="31" style="image-rendering:pixelated"></a>
-      <br>
-      Copy below snippet:  </p>
-
-    <div class="embed-code">
-      <pre><code>&lt;a href="https://aexinide.is-a.dev/" target="_blank" rel="noopener noreferrer"&gt;
+      <div class="embed-code">
+        <pre><code>&lt;a href="https://aexinide.is-a.dev/" target="_blank" rel="noopener noreferrer"&gt;
   &lt;img src="https://aexinide.is-a.dev/assets/aexinide-88x31.gif"
        alt="@aexinide" width="88" height="31"
        style="image-rendering:pixelated"&gt;
 &lt;/a&gt;</code></pre>
-      <button class="cp" type="button"
-        data-copy='<a href="https://aexinide.is-a.dev/" target="_blank" rel="noopener noreferrer"><img src="https://aexinide.is-a.dev/assets/aexinide-88x31.gif" alt="@aexinide" width="88" height="31" style="image-rendering:pixelated"></a>'
-        aria-label="Copy button HTML"
-        title="Copy HTML">⧉ Copy HTML</button>
+        <button class="cp" type="button"
+          data-copy='<a href="https://aexinide.is-a.dev/" target="_blank" rel="noopener noreferrer"><img src="https://aexinide.is-a.dev/assets/aexinide-88x31.gif" alt="@aexinide" width="88" height="31" style="image-rendering:pixelated"></a>'
+          aria-label="Copy button HTML"
+          title="Copy HTML">⧉ Copy HTML</button>
+      </div>
+
+      <p class="bi-foot">Want your button on this wall? <a href="/contact/" data-view="contact">Contact me</a> and I'll add it.</p>
     </div>
-
-    <p><br>
-      Want your button on this wall?
-      <a href="/contact/" data-view="contact">Contact me</a>
-      and I'll add it.
-    </p>
-
   </div>
-</div>
 
-  
   <div class="asec"><h3 class="at">Colors</h3><p class="asub">Palettes I keep coming back to.</p><div class="clgrid" id="a-colors"></div></div>
 </div></section>
 
@@ -929,7 +917,6 @@ var A_BUTTONS=[
  {src:'https://cyber.dabamos.de/88x31/atari.gif',href:'https://en.wikipedia.org/wiki/Atari',alt:'Atari'},
  {src:'https://cyber.dabamos.de/88x31/chill_pill.gif',href:'https://cyber.dabamos.de/88x31/',alt:'Chill pill'}
 ];
-var A_EMOJI=['😎','🔥','💀','🫡','🧠','⚡','🛰️','🤖','🐧','✨','🫠','🙏'];
 var A_COLORS=[
  {n:'Sky',h:'#38bdf8'},{n:'Amber',h:'#f59e0b'},{n:'Green',h:'#34d399'},{n:'Violet',h:'#a78bfa'},
  {n:'Rose',h:'#fb7185'},{n:'Desk',h:'#0a1018'},{n:'Card',h:'#0a121b'},{n:'Text',h:'#e3ecf5'}
@@ -954,15 +941,13 @@ function renderArchive(){
  }).join(''):none;
  $('a-buttons').innerHTML=A_BUTTONS.length?A_BUTTONS.map(function(b){
   if(typeof b==='string')b={src:b};
-  var im='<img src="'+esc(b.src)+'" alt="'+esc(b.alt||'88x31 button')+'" width="88" height="31" loading="lazy">';
+  var im='<img src="'+esc(b.src)+'" alt="'+esc(b.alt||'88x31 button')+'" width="88" height="31" loading="lazy" onerror="var p=this.closest(\'a,span\');if(p)p.remove()">';
   return b.href?'<a href="'+esc(b.href)+'" target="_blank" rel="noopener">'+im+'</a>':'<span>'+im+'</span>';
  }).join(''):none;
- $('a-emoji').innerHTML=A_EMOJI.map(function(m){return '<button class="em" data-copy="'+esc(m)+'" aria-label="Copy '+esc(m)+'" title="Copy">'+m+'</button>';}).join('');
  $('a-colors').innerHTML=A_COLORS.map(function(c){
   return '<div class="cl"><div class="sw" style="background:'+esc(c.h)+'"></div><div class="ci"><div><span class="cn">'+esc(c.n)+'</span><span class="hx">'+esc(c.h)+'</span></div><button class="cp" aria-label="Copy '+esc(c.h)+'" title="Copy hex" data-copy="'+esc(c.h)+'">'+CPY+'</button></div></div>';
  }).join('');
 }
-/* then change your init line to:  renderArchive();mountAvatars();loadPosts();loadProjects(); */
 renderArchive();
 </script>
 <!-- real oneko cat: https://github.com/adryd325/oneko.js (MIT). To self-host, download oneko.js + oneko.gif next to index.html and use src="oneko.js" with no data-cat. -->
