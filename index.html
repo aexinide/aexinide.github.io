@@ -354,6 +354,16 @@ a.post{text-decoration:none}
  .btnwall{grid-template-columns:repeat(4,1fr);gap:3px}
  .btnwall img{width:100%;height:auto;aspect-ratio:88/31}
 }
+/* pixel button invite + embed snippet */
+.button-invite{margin-top:18px;padding:18px;background:var(--gcard);border:1px solid var(--gline);border-radius:12px}
+.button-invite p{margin:0 0 12px;font-size:13.5px;max-width:none}
+.button-invite p:last-of-type{margin-bottom:12px}
+.button-invite a{color:var(--gacc);text-decoration:underline;text-underline-offset:3px}
+.embed-code{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:12px;background:#02050a;border:1px solid var(--gline);border-radius:8px}
+.embed-code pre{flex:1;min-width:0;margin:0;overflow-x:auto;white-space:pre;font-size:12px;line-height:1.7;color:var(--gtx)}
+.embed-code code{font-family:'JetBrains Mono',monospace}
+.embed-code .cp{white-space:nowrap;padding:7px 10px}
+@media (max-width:520px){.embed-code{flex-direction:column}}
  
 /* emoji */
 .emgrid{display:flex;flex-wrap:wrap;gap:8px}
@@ -395,7 +405,7 @@ a.post{text-decoration:none}
   <section class="pane gui" id="v-home"><div class="hbox">
     <span class="ava hero"></span>
     <h1 class="hname">AEXINIDE</h1>
-    <p class="htxt">AEXINIDE is just an online name. The person behind it stays out of the picture, so all that is left is the work. I am a <b>computer science student</b> currently in my <b>third year</b>, and I love building things <b>close to the metal</b>: AI, robotics, Linux kernels and quantum systems. I learn by shipping open-source projects, breaking things, and writing down what I find.</p>
+    <p class="htxt">AEXINIDE (pronounce as aik-sih-nide) is just an online name. The person behind it stays out of the picture, so all that is left is the work. I am a <b>computer science student</b> currently in my <b>third year</b>, and I love building things <b>close to the metal</b>: AI, robotics, Linux kernels and quantum systems. I learn by shipping open-source projects, breaking things, and writing down what I find.</p>
     <p class="htxt">Right now I am exploring how to make models run faster on small hardware, how real-time schedulers behave under load, and how error correction might scale. When I am not coding I read papers, tinker with my Linux setup, and collect things from the internet that I like.</p>
     <p class="htxt">This site is my corner of the internet: projects, blog, and an archive of things I love. Want the hacker experience? Click <a class="lnk" href="/#terminal" data-view="terminal">terminal</a> and a terminal popup opens. </p>
     <!-- <div class="btns">
@@ -420,28 +430,51 @@ a.post{text-decoration:none}
 
   <section class="pane gui" id="v-blog" hidden><div class="in" id="blog-in"></div></section>
 
-  <!-- <section class="pane gui" id="v-archive" hidden><div class="in">
-    <h2 class="pt">Archive</h2>
-    <p class="sub">A collection of things from the internet that I love: quotes, GIFs, styles, buttons, emoji, colors and more. Work in progress.</p>
-    <div class="cards">
-      <div class="card" style="border-left-color:var(--gacc)"><span class="ico">❝</span><h3>Quotes</h3><div class="k">Lines worth keeping.</div><span class="soon">soon</span></div>
-      <div class="card" style="border-left-color:var(--gamb)"><span class="ico">🎞️</span><h3>GIFs</h3><div class="k">Loops that live rent free.</div><span class="soon">soon</span></div>
-      <div class="card" style="border-left-color:var(--ggrn)"><span class="ico">✦</span><h3>Styles</h3><div class="k">Fonts, layouts, vibes.</div><span class="soon">soon</span></div>
-      <div class="card" style="border-left-color:var(--gacc)"><span class="ico">▣</span><h3>Buttons</h3><div class="k">UI details I admire.</div><span class="soon">soon</span></div>
-      <div class="card" style="border-left-color:var(--gamb)"><span class="ico">😎</span><h3>Emoji</h3><div class="k">The ones I actually use.</div><span class="soon">soon</span></div>
-      <div class="card" style="border-left-color:var(--ggrn)"><span class="ico">🎨</span><h3>Colors</h3><div class="k">Palettes I keep coming back to.</div><span class="soon">soon</span></div>
-    </div>
-  </div></section> -->
-  <!-- ===================== 2) HTML ===================== -->
-<section class="pane gui" id="v-archive" hidden><div class="in">
+
+  <section class="pane gui" id="v-archive" hidden><div class="in">
   <h2 class="pt">Archive</h2>
   <p class="sub">A collection of things from the internet that I love. Work in progress.</p>
  
   <div class="asec"><h3 class="at">Quotes</h3><p class="asub">Lines worth keeping.</p><div class="qlist" id="a-quotes"></div></div>
   <div class="asec"><h3 class="at">GIFs</h3><p class="asub">Loops that live rent free.</p><div class="gifgrid" id="a-gifs"></div></div>
   <div class="asec"><h3 class="at">Styles</h3><p class="asub">Fonts, layouts, vibes.</p><div class="stgrid" id="a-styles"></div></div>
-  <div class="asec"><h3 class="at">Pixel Buttons</h3><p class="asub">88×31 buttons I admire.</p><div class="btnwall" id="a-buttons"></div></div>
-  <div class="asec"><h3 class="at">Emoji</h3><p class="asub">The ones I actually use.</p><div class="emgrid" id="a-emoji"></div></div>
+  <!-- <div class="asec"><h3 class="at">Pixel Buttons</h3><p class="asub">88×31 buttons I admire.</p><div class="btnwall" id="a-buttons"></div></div> -->
+
+  <div class="asec">
+  <h3 class="at">Pixel Buttons</h3>
+  <p class="asub">88×31 buttons I admire.</p>
+
+  <div class="btnwall" id="a-buttons"></div>
+
+  <div class="button-invite">
+
+    <p>Want to add me to your website? <br>
+      <a href="https://aexinide.is-a.dev/" target="_blank" rel="noopener noreferrer"><img src="https://aexinide.is-a.dev/assets/aexinide-88x31.gif" alt="@aexinide" width="88" height="31" style="image-rendering:pixelated"></a>
+      <br>
+      Copy below snippet:  </p>
+
+    <div class="embed-code">
+      <pre><code>&lt;a href="https://aexinide.is-a.dev/" target="_blank" rel="noopener noreferrer"&gt;
+  &lt;img src="https://aexinide.is-a.dev/assets/aexinide-88x31.gif"
+       alt="@aexinide" width="88" height="31"
+       style="image-rendering:pixelated"&gt;
+&lt;/a&gt;</code></pre>
+      <button class="cp" type="button"
+        data-copy='<a href="https://aexinide.is-a.dev/" target="_blank" rel="noopener noreferrer"><img src="https://aexinide.is-a.dev/assets/aexinide-88x31.gif" alt="@aexinide" width="88" height="31" style="image-rendering:pixelated"></a>'
+        aria-label="Copy button HTML"
+        title="Copy HTML">⧉ Copy HTML</button>
+    </div>
+
+    <p><br>
+      Want your button on this wall?
+      <a href="/contact/" data-view="contact">Contact me</a>
+      and I'll add it.
+    </p>
+
+  </div>
+</div>
+
+  
   <div class="asec"><h3 class="at">Colors</h3><p class="asub">Palettes I keep coming back to.</p><div class="clgrid" id="a-colors"></div></div>
 </div></section>
 
@@ -879,10 +912,9 @@ var A_STYLES=[
 ];
 /* 88x31 buttons: string path, or {src,href,alt} to make it a link. Put files in assets/buttons/ */
 var A_BUTTONS=[
-  'assets/aexinide-88x31.gif',
  // {src:'assets/buttons/nixos.gif',href:'https://nixos.org',alt:'NixOS'},
  {src:'assets/aexinide-88x31.gif',href:'https://aexinide.is-a.dev/',alt:'aexinide'},
- {src:'assets/buttons/rahul.gif',href:'https://RAHUL-PORTFOLIO-URL',alt:'Rahul'},
+//  {src:'assets/buttons/rahul.gif',href:'https://RAHUL-PORTFOLIO-URL',alt:'Rahul'},
  {src:'https://cyber.dabamos.de/88x31/archlinux.gif',href:'https://archlinux.org',alt:'Arch Linux'},
  {src:'https://cyber.dabamos.de/88x31/7zip.gif',href:'https://www.7-zip.org',alt:'7-Zip'},
  {src:'https://cyber.dabamos.de/88x31/apache-powered.gif',href:'https://httpd.apache.org',alt:'Apache'},
